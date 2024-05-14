@@ -7,20 +7,16 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 namespace projeto_jogo
 {
-    internal class Plataform
+    public class Plataform
     {
-        public Rectangle Bounds { get; }
-        public Texture2D Texture { get; }
+        public Vector2 Position { get; set; }
+        public Texture2D Texture { get; set; }
+        public Rectangle BoundingBox => new Rectangle((int)Position.X, (int)Position.Y, Texture.Width, Texture.Height);
 
-        public Plataform(Texture2D texture, Rectangle bounds)
+        public Plataform(Texture2D texture, Vector2 position)
         {
             Texture = texture;
-            Bounds = bounds;
-        }
-
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(Texture, Bounds, Color.White);
+            Position = position;
         }
     }
 }

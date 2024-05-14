@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 namespace projeto_jogo
 {
-    internal class Personagem
+    public class Personagem
     {
         public Vector2 Position { get; set; }
+        public Vector2 Velocity { get; set; }
         public Texture2D Texture { get; set; }
-        public Rectangle Bounds => new Rectangle((int)Position.X, (int)Position.Y, Texture.Width, Texture.Height);
+        public Rectangle BoundingBox => new Rectangle((int)Position.X, (int)Position.Y, Texture.Width, Texture.Height);
+        public bool IsOnGround { get; set; }
 
         public Personagem(Texture2D texture, Vector2 position)
         {
@@ -19,21 +21,6 @@ namespace projeto_jogo
             Position = position;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(Texture, Position, Color.Gold);
-        }
-
-
-        public void Move(Vector2 newPosition)
-        {
-
-
-            Position = newPosition;
-        }
-
-
-        
 
 
     }

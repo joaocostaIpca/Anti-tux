@@ -25,3 +25,8 @@ C:\Users\Costa\Desktop\Disciplinas\TDV\projeto_jogo\obj\Debug\net6.0\projeto_jog
 C:\Users\Costa\Desktop\Disciplinas\TDV\projeto_jogo\obj\Debug\net6.0\ref\projeto_jogo.dll
 C:\Users\Costa\Desktop\Disciplinas\TDV\projeto_jogo\bin\Debug\net6.0\Content\Character4.xnb
 C:\Users\Costa\Desktop\Disciplinas\TDV\projeto_jogo\bin\Debug\net6.0\Content\platform_texture.xnb
+C:\Users\Costa\Desktop\Disciplinas\TDV\projeto_jogo\obj\Debug\net6.0\projeto_jogo.sourcelink.json
+C:\Users\Costa\Desktop\Disciplinas\TDV\projeto_jogo\bin\Debug\net6.0\Content\Background\background1.xnb
+C:\Users\Costa\Desktop\Disciplinas\TDV\projeto_jogo\bin\Debug\net6.0\Content\Background\background2.xnb
+C:\Users\Costa\Desktop\Disciplinas\TDV\projeto_jogo\bin\Debug\net6.0\Content\Background\background3.xnb
+C:\Users\Costa\Desktop\Disciplinas\TDV\projeto_jogo\bin\Debug\net6.0\Content\Background\background4a.xnb

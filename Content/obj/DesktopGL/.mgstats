@@ -1,2 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/Costa/Desktop/Disciplinas/TDV/projeto_jogo/Content/platform_texture.png","C:/Users/Costa/Desktop/Disciplinas/TDV/projeto_jogo/Content/bin/DesktopGL/platform_texture.xnb","TextureProcessor","Texture2DContent",535,215533,0,111593
+"C:/Users/Costa/Desktop/Disciplinas/TDV/projeto_jogo/Content/Background/background1.png","C:/Users/Costa/Desktop/Disciplinas/TDV/projeto_jogo/Content/bin/DesktopGL/Background/background1.xnb","TextureProcessor","Texture2DContent",9744,1843285,0,19941
+"C:/Users/Costa/Desktop/Disciplinas/TDV/projeto_jogo/Content/Background/background2.png","C:/Users/Costa/Desktop/Disciplinas/TDV/projeto_jogo/Content/bin/DesktopGL/Background/background2.xnb","TextureProcessor","Texture2DContent",11302,1843285,0,0396041
+"C:/Users/Costa/Desktop/Disciplinas/TDV/projeto_jogo/Content/Background/background3.png","C:/Users/Costa/Desktop/Disciplinas/TDV/projeto_jogo/Content/bin/DesktopGL/Background/background3.xnb","TextureProcessor","Texture2DContent",44240,1843285,0,0449749
+"C:/Users/Costa/Desktop/Disciplinas/TDV/projeto_jogo/Content/Background/background4a.png","C:/Users/Costa/Desktop/Disciplinas/TDV/projeto_jogo/Content/bin/DesktopGL/Background/background4a.xnb","TextureProcessor","Texture2DContent",106413,1843285,0,0455164
