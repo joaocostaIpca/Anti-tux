@@ -11,7 +11,7 @@ namespace projeto_jogo
     {
         public Vector2 Position { get; set; }
         public Texture2D Texture { get; set; }
-        public Rectangle BoundingBox => new Rectangle((int)Position.X, (int)Position.Y, Texture.Width, Texture.Height);
+        public Rectangle BoundingBox => new Rectangle((int)Position.X, (int)Position.Y, Texture.Width, Texture.Height); //le a plataforma e devolve os seus limites
 
         public Plataform(Texture2D texture, Vector2 position)
         {

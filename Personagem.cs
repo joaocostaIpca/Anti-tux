@@ -12,7 +12,7 @@ namespace projeto_jogo
         public Vector2 Position { get; set; }
         public Vector2 Velocity { get; set; }
         public Texture2D Texture { get; set; }
-        public Rectangle BoundingBox => new Rectangle((int)Position.X, (int)Position.Y, Texture.Width, Texture.Height);
+        public Rectangle BoundingBox => new Rectangle((int)Position.X, (int)Position.Y, Texture.Width, Texture.Height); //le o personagem e devolve os seus limites
         public bool IsOnGround { get; set; }
 
         public Personagem(Texture2D texture, Vector2 position)
@@ -20,8 +20,6 @@ namespace projeto_jogo
             Texture = texture;
             Position = position;
         }
-
-
 
     }
 }

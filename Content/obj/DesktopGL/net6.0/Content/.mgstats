@@ -1,1 +1,11 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/afons/Downloads/anti-tux2/Content/Background/background1.png","C:/Users/afons/Downloads/anti-tux2/Content/bin/DesktopGL/Content/Background/background1.xnb","TextureProcessor","Texture2DContent",9744,1843285,2.623291
+"C:/Users/afons/Downloads/anti-tux2/Content/Background/background2.png","C:/Users/afons/Downloads/anti-tux2/Content/bin/DesktopGL/Content/Background/background2.xnb","TextureProcessor","Texture2DContent",11302,1843285,0.7908259
+"C:/Users/afons/Downloads/anti-tux2/Content/Background/background3.png","C:/Users/afons/Downloads/anti-tux2/Content/bin/DesktopGL/Content/Background/background3.xnb","TextureProcessor","Texture2DContent",44240,1843285,0.8724734
+"C:/Users/afons/Downloads/anti-tux2/Content/Background/background4a.png","C:/Users/afons/Downloads/anti-tux2/Content/bin/DesktopGL/Content/Background/background4a.xnb","TextureProcessor","Texture2DContent",106413,1843285,0.3126231
+"C:/Users/afons/Downloads/anti-tux2/Content/Character4.png","C:/Users/afons/Downloads/anti-tux2/Content/bin/DesktopGL/Content/Character4.xnb","TextureProcessor","Texture2DContent",1668,8817,0.0109355
+"C:/Users/afons/Downloads/anti-tux2/Content/Menu/exit_button.png","C:/Users/afons/Downloads/anti-tux2/Content/bin/DesktopGL/Content/Menu/exit_button.xnb","TextureProcessor","Texture2DContent",123619,378965,0.9011966
+"C:/Users/afons/Downloads/anti-tux2/Content/Menu/Font_menu.spritefont","C:/Users/afons/Downloads/anti-tux2/Content/bin/DesktopGL/Content/Menu/Font_menu.xnb","FontDescriptionProcessor","SpriteFontContent",2075,37919,1.1271676
+"C:/Users/afons/Downloads/anti-tux2/Content/Menu/menu_background.png","C:/Users/afons/Downloads/anti-tux2/Content/bin/DesktopGL/Content/Menu/menu_background.xnb","TextureProcessor","Texture2DContent",1132373,8294485,1.7508589
+"C:/Users/afons/Downloads/anti-tux2/Content/Menu/start_button.png","C:/Users/afons/Downloads/anti-tux2/Content/bin/DesktopGL/Content/Menu/start_button.xnb","TextureProcessor","Texture2DContent",126643,378965,0.0794278
+"C:/Users/afons/Downloads/anti-tux2/Content/platform_texture.png","C:/Users/afons/Downloads/anti-tux2/Content/bin/DesktopGL/Content/platform_texture.xnb","TextureProcessor","Texture2DContent",535,215533,0.415249

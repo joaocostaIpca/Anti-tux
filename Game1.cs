@@ -22,13 +22,21 @@ namespace projeto_jogo
 
         private Personagem _character;
         private Plataform _platform;
-
+        private Menu _menu;
 
         private Vector2 _cameraPosition;
 
 
 
-        private float _gravity =300f;
+        private float _gravity = 300f;
+
+        private enum GameState
+        {
+            Menu,
+            Playing
+        }
+
+        private GameState _gameState = GameState.Menu;
 
         public Game1()
         {
@@ -43,8 +51,6 @@ namespace projeto_jogo
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-            
             base.Initialize();
         }
 
@@ -52,24 +58,71 @@ namespace projeto_jogo
         {
 
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            PlayerTexture= Content.Load<Texture2D>("Character4");
+            PlayerTexture = Content.Load<Texture2D>("Character4");
             _character = new Personagem(PlayerTexture, new Vector2(2400, 100));
             plataformTexture = Content.Load<Texture2D>("platform_texture");
             _platform = new Plataform(plataformTexture, new Vector2(2400, 700));
 
 
-                _backgroundLayer1 = Content.Load<Texture2D>("Background/background1");
+            _backgroundLayer1 = Content.Load<Texture2D>("Background/background1");
             _backgroundLayer2 = Content.Load<Texture2D>("Background/background2");
             _backgroundLayer3 = Content.Load<Texture2D>("Background/background3");
             _backgroundLayer4 = Content.Load<Texture2D>("Background/background4a");
+
+            //inciar o menu
+            _menu = new Menu(Content, _graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+            switch (_gameState)
+            {
+                case GameState.Menu:
+                    UpdateMenu();
+                    break;
+                case GameState.Playing:
+                    UpdateGame(deltaTime, gameTime);
+                    break;
+            }
+
+            base.Update(gameTime);
+        }
+
+        private void UpdateMenu()
+        {
+            // Atualiza o menu
+            _menu.Update();
+
+            // Verifica se o botão de começar jogo foi pressionado
+            if (_menu.StartButtonClicked())
+            {
+                // Começa o jogo
+                _gameState = GameState.Playing;
+            }
+            else if (_menu.ExitButtonClicked())
+            {
+                // Sai do jogo
+                Exit();
+            }
+        }
+
+
+
+
+
+
+        private void UpdateGame(float deltaTime, GameTime gameTime)
+        {
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                // Se a tecla Esc for pressionada, volta para o menu ( este reset tem de ficar porque se nao o menu fica na posição onde o personagem estava)
+                ResetGame();
+                _gameState = GameState.Menu;
+                return; 
+            }
+
 
             // Apply gravity
             if (!_character.IsOnGround)
@@ -127,7 +180,7 @@ namespace projeto_jogo
 
             _cameraPosition.X = Math.Max(_character.Position.X - (_graphics.PreferredBackBufferWidth / 2), 0);
 
-            base.Update(gameTime);
+            
 
 
         }
@@ -153,11 +206,18 @@ namespace projeto_jogo
 
             _spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, null, null, null, Matrix.CreateTranslation(-_cameraPosition.X, 0, 0));
 
-            
-            _spriteBatch.Draw(_character.Texture, _character.Position, Color.White);
-            _spriteBatch.Draw(_platform.Texture, _platform.Position, Color.White);
-            _spriteBatch.End();
+            if (_gameState == GameState.Menu)
+            {
+                _menu.Draw(_spriteBatch);
+            }
+            else if (_gameState == GameState.Playing)
+            {
+                _spriteBatch.Draw(_character.Texture, _character.Position, Color.White);
+                _spriteBatch.Draw(_platform.Texture, _platform.Position, Color.White);
+                
+            }
 
+            _spriteBatch.End();
             base.Draw(gameTime);
         }
     }
