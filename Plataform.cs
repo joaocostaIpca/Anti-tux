@@ -18,5 +18,12 @@ namespace projeto_jogo
             Texture = texture;
             Position = position;
         }
+
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(Texture, Position, Color.White);
+        }
+
     }
 }

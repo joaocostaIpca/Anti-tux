@@ -1,1 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?><SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><Profile>Reach</Profile><Platform>DesktopGL</Platform><Config /><SourceFiles><File>C:/Users/afons/Downloads/anti-tux2/Content/Background/background1.png</File><File>C:/Users/afons/Downloads/anti-tux2/Content/Background/background2.png</File><File>C:/Users/afons/Downloads/anti-tux2/Content/Background/background3.png</File><File>C:/Users/afons/Downloads/anti-tux2/Content/Background/background4a.png</File><File>C:/Users/afons/Downloads/anti-tux2/Content/Character4.png</File><File>C:/Users/afons/Downloads/anti-tux2/Content/Menu/exit_button.png</File><File>C:/Users/afons/Downloads/anti-tux2/Content/Menu/Font_menu.spritefont</File><File>C:/Users/afons/Downloads/anti-tux2/Content/Menu/menu_background.png</File><File>C:/Users/afons/Downloads/anti-tux2/Content/Menu/start_button.png</File><File>C:/Users/afons/Downloads/anti-tux2/Content/platform_texture.png</File></SourceFiles><DestFiles><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /><File xsi:nil="true" /></DestFiles></SourceFileCollection>
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Costa/source/repos/Anti-tux/Content/Background/background1.png</File>
+    <File>C:/Users/Costa/source/repos/Anti-tux/Content/Background/background2.png</File>
+    <File>C:/Users/Costa/source/repos/Anti-tux/Content/Background/background3.png</File>
+    <File>C:/Users/Costa/source/repos/Anti-tux/Content/Background/background4a.png</File>
+    <File>C:/Users/Costa/source/repos/Anti-tux/Content/Character4.png</File>
+    <File>C:/Users/Costa/source/repos/Anti-tux/Content/Menu/exit_button.png</File>
+    <File>C:/Users/Costa/source/repos/Anti-tux/Content/Menu/Font_menu.spritefont</File>
+    <File>C:/Users/Costa/source/repos/Anti-tux/Content/Menu/menu_background.png</File>
+    <File>C:/Users/Costa/source/repos/Anti-tux/Content/Menu/start_button.png</File>
+    <File>C:/Users/Costa/source/repos/Anti-tux/Content/platform_texture.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

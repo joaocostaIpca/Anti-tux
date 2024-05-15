@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
+using System.Collections.Generic;
 
 namespace projeto_jogo
 {
@@ -21,7 +22,7 @@ namespace projeto_jogo
 
 
         private Personagem _character;
-        private Plataform _platform;
+        private List<Plataform> _platforms;
         private Menu _menu;
 
         private Vector2 _cameraPosition;
@@ -33,7 +34,9 @@ namespace projeto_jogo
         private enum GameState
         {
             Menu,
-            Playing
+            Playing,
+            GameOver
+
         }
 
         private GameState _gameState = GameState.Menu;
@@ -46,11 +49,15 @@ namespace projeto_jogo
 
             _graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             _graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
-            _graphics.IsFullScreen = true;
+            _graphics.IsFullScreen = false;
         }
 
         protected override void Initialize()
+
         {
+            
+
+
             base.Initialize();
         }
 
@@ -61,7 +68,14 @@ namespace projeto_jogo
             PlayerTexture = Content.Load<Texture2D>("Character4");
             _character = new Personagem(PlayerTexture, new Vector2(2400, 100));
             plataformTexture = Content.Load<Texture2D>("platform_texture");
-            _platform = new Plataform(plataformTexture, new Vector2(2400, 700));
+
+
+            _platforms = new List<Plataform>();
+
+            _platforms.Add(new Plataform(plataformTexture, new Vector2(2400, 300)));
+            
+            _platforms.Add(new Plataform(plataformTexture, new Vector2(3100, 300)));
+
 
 
             _backgroundLayer1 = Content.Load<Texture2D>("Background/background1");
@@ -122,7 +136,7 @@ namespace projeto_jogo
                 _gameState = GameState.Menu;
                 return; 
             }
-
+            bool isOnPlatform = false;
 
             // Apply gravity
             if (!_character.IsOnGround)
@@ -133,19 +147,37 @@ namespace projeto_jogo
             // Update character position
             _character.Position += _character.Velocity * deltaTime;
 
-            if (_character.BoundingBox.Intersects(_platform.BoundingBox))
-            {
-                // Adjust player position to prevent clipping into the platform
-                _character.Position = new Vector2(_character.Position.X, _platform.Position.Y - _character.Texture.Height);
-                _character.Velocity = new Vector2(_character.Velocity.X, Math.Max(0, _character.Velocity.Y)); // Prevent downward velocity
+           
 
-                // Update player's on-ground status
-                _character.IsOnGround = true;
-            }
-            else
+            foreach (var platform in _platforms)
             {
-                _character.IsOnGround = false;
+                
+
+                    if (_character.BoundingBox.Intersects(platform.BoundingBox)&& _character.BoundingBox.Bottom >= platform.BoundingBox.Top)
+                   
+                    {
+                        // Adjust player position to prevent clipping into the platform
+                        _character.Position = new Vector2(_character.Position.X, platform.Position.Y - _character.Texture.Height);
+                        _character.Velocity = new Vector2(_character.Velocity.X, Math.Max(0, _character.Velocity.Y)); // Prevent downward velocity
+
+                        // Update player's on-ground status
+                        isOnPlatform = true;
+                        break; // Stop checking further platforms as the character is already on one
+                    }
+               
+
+                
+
+                Console.WriteLine("Platform Position: " + platform.Position.X);
+                Console.WriteLine("Platform Position: " + platform.Position.Y);
             }
+
+            Console.WriteLine("Character Position  X:  " + _character.Position.X);
+            Console.WriteLine("Character Position  Y:  " + _character.Position.Y);
+
+
+
+            _character.IsOnGround = isOnPlatform;
 
             // Handle input for jumping only if the player is on the ground
             if (Keyboard.GetState().IsKeyDown(Keys.Space) && _character.IsOnGround)
@@ -212,8 +244,17 @@ namespace projeto_jogo
             }
             else if (_gameState == GameState.Playing)
             {
+
+
+                foreach (var platform in _platforms)
+                {
+                    platform.Draw(_spriteBatch);
+                }
+
+
+
                 _spriteBatch.Draw(_character.Texture, _character.Position, Color.White);
-                _spriteBatch.Draw(_platform.Texture, _platform.Position, Color.White);
+               
                 
             }
 

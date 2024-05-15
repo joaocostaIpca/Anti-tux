@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Costa\\Desktop\\Disciplinas\\TDV\\projeto_jogo\\",
+  "WorkspaceRootPath": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\desktop\\disciplinas\\tdv\\projeto_jogo\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\desktop\\disciplinas\\tdv\\projeto_jogo\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\desktop\\disciplinas\\tdv\\projeto_jogo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\desktop\\disciplinas\\tdv\\projeto_jogo\\plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,17 +30,16 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Personagem.cs",
-              "DocumentMoniker": "C:\\Users\\Costa\\Desktop\\Disciplinas\\TDV\\projeto_jogo\\Personagem.cs",
+              "DocumentMoniker": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Personagem.cs",
               "RelativeDocumentMoniker": "Personagem.cs",
-              "ToolTip": "C:\\Users\\Costa\\Desktop\\Disciplinas\\TDV\\projeto_jogo\\Personagem.cs",
+              "ToolTip": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Personagem.cs",
               "RelativeToolTip": "Personagem.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAwwBkAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T15:53:42.845Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -50,40 +49,38 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\Costa\\Desktop\\Disciplinas\\TDV\\projeto_jogo\\Game1.cs",
+              "DocumentMoniker": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "C:\\Users\\Costa\\Desktop\\Disciplinas\\TDV\\projeto_jogo\\Game1.cs*",
-              "RelativeToolTip": "Game1.cs*",
-              "ViewState": "AQIAABgAAAAAAAAAAAAiwDIAAAAtAAAA",
+              "ToolTip": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Game1.cs",
+              "RelativeToolTip": "Game1.cs",
+              "ViewState": "AQIAAJ0AAAAAAAAAAAAwwLwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T15:33:50.755Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Costa\\Desktop\\Disciplinas\\TDV\\projeto_jogo\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Costa\\Desktop\\Disciplinas\\TDV\\projeto_jogo\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Menu.cs",
+              "RelativeDocumentMoniker": "Menu.cs",
+              "ToolTip": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Menu.cs",
+              "RelativeToolTip": "Menu.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEMAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-14T17:32:06.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-15T10:13:46.581Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Plataform.cs",
-              "DocumentMoniker": "C:\\Users\\Costa\\Desktop\\Disciplinas\\TDV\\projeto_jogo\\Plataform.cs",
+              "DocumentMoniker": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Plataform.cs",
               "RelativeDocumentMoniker": "Plataform.cs",
-              "ToolTip": "C:\\Users\\Costa\\Desktop\\Disciplinas\\TDV\\projeto_jogo\\Plataform.cs",
+              "ToolTip": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Plataform.cs",
               "RelativeToolTip": "Plataform.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:21:47.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T16:21:47.764Z"
             }
           ]
         }

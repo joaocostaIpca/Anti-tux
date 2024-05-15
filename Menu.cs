@@ -29,10 +29,9 @@ namespace projeto_jogo
 
 
             // Posicionamento dos botões
-            int buttonWidth = 700;
+            int buttonWidth = 600;
             int buttonHeight = 200;
-            int buttonSpacing = 900;
-            
+            int buttonSpacing = 680;           
 
             int startX = (screenWidth - buttonWidth  )/ 4;
             int startY = (screenHeight - (2 *  buttonHeight) );
