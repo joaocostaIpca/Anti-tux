@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace projeto_jogo
 {
@@ -12,25 +13,38 @@ namespace projeto_jogo
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-
+        //Texturas
         private Texture2D plataformTexture;
         private Texture2D PlayerTexture;
+        private Texture2D enemyTexture;
         private Texture2D _backgroundLayer1;
         private Texture2D _backgroundLayer2;
         private Texture2D _backgroundLayer3;
         private Texture2D _backgroundLayer4;
+        private Texture2D pixelTexture;
+        private Texture2D projectileTexture;
+        
+        
+       
 
-
+        //Classes do jogo
         private Personagem _character;
         private List<Plataform> _platforms;
         private Menu _menu;
+        private List<Enemy> _enemies;
+        private List<Projectile> _projectiles = new List<Projectile>();
 
+
+        //Variaveis do jogo
+        private List<Vector2> _initialEnemyPositions = new List<Vector2>();
         private Vector2 _cameraPosition;
-
-
-
-        private float _gravity = 300f;
-
+        private float _gravity = 400f;
+        private float enemyFollowRange = 200f; // Adjust the range as needed
+        private float enemySpeed = 20f;
+        private float projectileCooldown = 2f; // Cooldown duration in seconds
+        private float timeSinceLastProjectile = 0f;
+        private Vector2 playerDirection = Vector2.UnitX;
+        //Estado do jogo
         private enum GameState
         {
             Menu,
@@ -63,17 +77,34 @@ namespace projeto_jogo
 
         protected override void LoadContent()
         {
-
-            _spriteBatch = new SpriteBatch(GraphicsDevice);
-            PlayerTexture = Content.Load<Texture2D>("Character4");
-            _character = new Personagem(PlayerTexture, new Vector2(2400, 100));
-            plataformTexture = Content.Load<Texture2D>("platform_texture");
-
-
-            _platforms = new List<Plataform>();
-
-            _platforms.Add(new Plataform(plataformTexture, new Vector2(2400, 300)));
             
+            _spriteBatch = new SpriteBatch(GraphicsDevice);
+
+
+            //Carregar texturas
+            PlayerTexture = Content.Load<Texture2D>("Character4");
+            plataformTexture = Content.Load<Texture2D>("platform_texture");
+            enemyTexture = Content.Load<Texture2D>("Enemy/stand-0");
+            pixelTexture = Content.Load<Texture2D>("pixel");
+            projectileTexture = Content.Load<Texture2D>("projectile");
+            //Adicionar inimigos a lista
+            _enemies = new List<Enemy>
+            {
+                new Enemy(enemyTexture, new Vector2(2600, 100), enemySpeed),
+                new Enemy(enemyTexture, new Vector2(3300, 100), enemySpeed)
+            };
+
+            //Guardar as posições iniciais dos inimigos
+            foreach (var enemy in _enemies)
+            {
+                _initialEnemyPositions.Add(enemy.Position);
+            }
+
+            _character = new Personagem(PlayerTexture, new Vector2(2400, 100));
+
+            //Criar plataformas e adicionar a lista
+            _platforms = new List<Plataform>();
+            _platforms.Add(new Plataform(plataformTexture, new Vector2(2400, 300)));
             _platforms.Add(new Plataform(plataformTexture, new Vector2(3100, 300)));
 
 
@@ -104,6 +135,28 @@ namespace projeto_jogo
             base.Update(gameTime);
         }
 
+
+        private void ResetGame()
+        {
+
+            // Reniciar o personagem
+            _character.Position = new Vector2(2400, 100);
+            _character.Velocity = Vector2.Zero;
+            _character.IsOnGround = false;
+
+            // Dá respawn aos inimigos
+            RespawnEnemies();
+            foreach (var enemy in _enemies)
+            {
+                enemy.Position = enemy.InitialPosition; // Reset to initial position
+                enemy.Velocity = Vector2.Zero;
+            }
+            // Reset camera position
+            _cameraPosition = Vector2.Zero;
+
+            // Additional reset logic if needed
+        }
+
         private void UpdateMenu()
         {
             // Atualiza o menu
@@ -123,7 +176,23 @@ namespace projeto_jogo
         }
 
 
+        private void RespawnEnemies()
+        {
+            _enemies.Clear(); // Clear existing enemies
 
+            // Create new enemies at initial positions
+            foreach (var initialEnemyPosition in _initialEnemyPositions)
+            {
+                _enemies.Add(new Enemy(enemyTexture, initialEnemyPosition, enemySpeed));
+            }
+        }
+
+
+        private void LaunchProjectile()
+        {
+            // Create and add a new projectile to the list
+            _projectiles.Add(new Projectile(projectileTexture, _character.Position, new Vector2(100, 0)* playerDirection, 5f)); // Adjust velocity as needed
+        }
 
 
 
@@ -137,22 +206,74 @@ namespace projeto_jogo
                 return; 
             }
             bool isOnPlatform = false;
-
             // Apply gravity
             if (!_character.IsOnGround)
             {
                 _character.Velocity = new Vector2(_character.Velocity.X, _character.Velocity.Y + _gravity * deltaTime);
             }
-
             // Update character position
             _character.Position += _character.Velocity * deltaTime;
 
-           
+            
 
+            foreach (var projectile in _projectiles.ToList())
+            {
+
+                //Da update a posição do projetil
+                projectile.Update(deltaTime);
+
+                // Remove o projetil se ele estiver passar um determinado tempo
+                if (projectile.IsExpired())
+                {
+                    _projectiles.Remove(projectile);
+                }
+
+                foreach (var enemy in _enemies.ToList())
+                {
+                    if (projectile.BoundingBox.Intersects(enemy.BoundingBox))
+                    {
+                        // Remove the projectile and the enemy
+                        _projectiles.Remove(projectile);
+                        _enemies.Remove(enemy);
+                    }
+                }
+            }
+
+
+
+            for (int i = _enemies.Count - 1; i >= 0; i--)
+            {
+                var enemy = _enemies[i];
+
+                // Update the enemy position
+                enemy.Update(_character.Position, enemyFollowRange, _platforms, _gravity, deltaTime);
+
+                // Check for collision with the player
+                if (_character.BoundingBox.Intersects(enemy.BoundingBox))
+                {
+                    // Check if the player is landing on top of the enemy
+                    if (_character.BoundingBox.Bottom <= enemy.BoundingBox.Top + _character.Velocity.Y * deltaTime)
+                    {
+                        // Remove the enemy from the list
+                        _enemies.RemoveAt(i);
+                    }
+                    else
+                    {
+                        // Reset the game and switch to menu state
+                        ResetGame();
+                        _gameState = GameState.Menu;
+                        return;
+                    }
+                }
+            }
+
+
+
+
+           
+            //Gere a interação com as plataformas
             foreach (var platform in _platforms)
             {
-                
-
                     if (_character.BoundingBox.Intersects(platform.BoundingBox)&& _character.BoundingBox.Bottom >= platform.BoundingBox.Top)
                    
                     {
@@ -164,44 +285,40 @@ namespace projeto_jogo
                         isOnPlatform = true;
                         break; // Stop checking further platforms as the character is already on one
                     }
-               
-
-                
-
-                Console.WriteLine("Platform Position: " + platform.Position.X);
-                Console.WriteLine("Platform Position: " + platform.Position.Y);
             }
-
-            Console.WriteLine("Character Position  X:  " + _character.Position.X);
-            Console.WriteLine("Character Position  Y:  " + _character.Position.Y);
+             _character.IsOnGround = isOnPlatform;
 
 
 
-            _character.IsOnGround = isOnPlatform;
 
-            // Handle input for jumping only if the player is on the ground
-            if (Keyboard.GetState().IsKeyDown(Keys.Space) && _character.IsOnGround)
+            //tempo do ultimo projetil lancado
+            timeSinceLastProjectile += deltaTime;
+            //Habilidade de projetil
+            if (Keyboard.GetState().IsKeyDown(Keys.E) && timeSinceLastProjectile >= projectileCooldown)
             {
-                _character.Velocity = new Vector2(_character.Velocity.X, -300); // Adjust jump strength as needed
+                LaunchProjectile();
+                timeSinceLastProjectile = 0f; // reniciar o tempo
             }
 
 
+            // Gere o input do jogador 
 
 
-            // Handle input for jumping and moving
             if (Keyboard.GetState().IsKeyDown(Keys.Space) && _character.IsOnGround)
             {
-                _character.Velocity = new Vector2(_character.Velocity.X, -300); // Adjust jump strength as needed
+                _character.Velocity = new Vector2(_character.Velocity.X, -300);
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
                 _character.Position = new Vector2(_character.Position.X - 150 * deltaTime, _character.Position.Y);
+                playerDirection = -Vector2.UnitX;
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
                 _character.Position = new Vector2(_character.Position.X + 150 * deltaTime, _character.Position.Y);
+                playerDirection = Vector2.UnitX;
             }
 
             if (_character.Position.Y > GraphicsDevice.Viewport.Height)
@@ -216,22 +333,6 @@ namespace projeto_jogo
 
 
         }
-
-        private void ResetGame()
-        {
-            // Reset player position
-            _character.Position = new Vector2(2400, 100);
-            _character.Velocity = Vector2.Zero;
-            _character.IsOnGround = false;
-
-            // Reset camera position
-            _cameraPosition = Vector2.Zero;
-
-            // Additional reset logic if needed
-        }
-
-
-
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
@@ -251,12 +352,27 @@ namespace projeto_jogo
                     platform.Draw(_spriteBatch);
                 }
 
-
-
+                foreach (var enemy in _enemies)
+                {
+                    if (_enemies != null)
+                    {
+                        _spriteBatch.Draw(pixelTexture, enemy.BoundingBox, Color.Red * 0.5f);
+                        enemy.Draw(_spriteBatch);
+                    }
+                }
+                _spriteBatch.Draw(pixelTexture, _character.BoundingBox, Color.Red * 0.5f);
                 _spriteBatch.Draw(_character.Texture, _character.Position, Color.White);
                
                 
             }
+
+
+
+            foreach (var projectile in _projectiles)
+            {
+                projectile.Draw(_spriteBatch);
+            }
+
 
             _spriteBatch.End();
             base.Draw(gameTime);

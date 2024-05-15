@@ -70,7 +70,6 @@ C:\Users\Costa\Source\Repos\Anti-tux\bin\Debug\net6.0\Content\Background\backgro
 C:\Users\Costa\Source\Repos\Anti-tux\bin\Debug\net6.0\Content\Background\background2.xnb
 C:\Users\Costa\Source\Repos\Anti-tux\bin\Debug\net6.0\Content\Background\background3.xnb
 C:\Users\Costa\Source\Repos\Anti-tux\bin\Debug\net6.0\Content\Background\background4a.xnb
-C:\Users\Costa\Source\Repos\Anti-tux\bin\Debug\net6.0\Content\Character4.xnb
 C:\Users\Costa\Source\Repos\Anti-tux\bin\Debug\net6.0\Content\Menu\exit_button.xnb
 C:\Users\Costa\Source\Repos\Anti-tux\bin\Debug\net6.0\Content\Menu\Font_menu.xnb
 C:\Users\Costa\Source\Repos\Anti-tux\bin\Debug\net6.0\Content\Menu\menu_background.xnb
@@ -102,3 +101,7 @@ C:\Users\Costa\Source\Repos\Anti-tux\obj\Debug\net6.0\refint\projeto_jogo.dll
 C:\Users\Costa\Source\Repos\Anti-tux\obj\Debug\net6.0\projeto_jogo.pdb
 C:\Users\Costa\Source\Repos\Anti-tux\obj\Debug\net6.0\projeto_jogo.genruntimeconfig.cache
 C:\Users\Costa\Source\Repos\Anti-tux\obj\Debug\net6.0\ref\projeto_jogo.dll
+C:\Users\Costa\Source\Repos\Anti-tux\bin\Debug\net6.0\Content\Enemy\stand-0.xnb
+C:\Users\Costa\source\repos\Anti-tux\bin\Debug\net6.0\Content\pixel.xnb
+C:\Users\Costa\source\repos\Anti-tux\bin\Debug\net6.0\Content\Character4.xnb
+C:\Users\Costa\source\repos\Anti-tux\bin\Debug\net6.0\Content\projectile.xnb

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Costa/Source/Repos/Anti-tux/Content/Menu/Font_menu.spritefont</SourceFile>
+  <SourceFile>C:/Users/Costa/source/repos/Anti-tux/Content/Menu/Font_menu.spritefont</SourceFile>
   <SourceTime>2024-05-15T11:11:47.3691088+01:00</SourceTime>
-  <DestFile>C:/Users/Costa/Source/Repos/Anti-tux/Content/bin/DesktopGL/Content/Menu/Font_menu.xnb</DestFile>
-  <DestTime>2024-05-15T11:12:03.7287819+01:00</DestTime>
+  <DestFile>C:/Users/Costa/source/repos/Anti-tux/Content/bin/DesktopGL/Content/Menu/Font_menu.xnb</DestFile>
+  <DestTime>2024-05-15T21:59:10.1858225+01:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2022-07-26T12:44:56+01:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

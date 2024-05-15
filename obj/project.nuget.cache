@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dvFDhrCMRAdIKRwdQixulxJT5CECpRQWSKaC1nDUfdgqdDVqh5N3v9xM4kVP+V5nHTwGfbR9mhxAhoemK8GE1g==",
+  "dgSpecHash": "E4V11jKWXeHbb9v28/QqQ2s8D9G/uK6omIdknml42NautiqQY1fmJPzMGFyRrM1Fu4bk3tHcqj6NAbaPVamOQw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Costa\\Source\\Repos\\Anti-tux\\projeto_jogo.csproj",
+  "projectFilePath": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\projeto_jogo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Costa\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
     "C:\\Users\\Costa\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
