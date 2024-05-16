@@ -40,10 +40,11 @@ namespace projeto_jogo
         private Vector2 _cameraPosition;
         private float _gravity = 400f;
         private float enemyFollowRange = 200f; // Adjust the range as needed
-        private float enemySpeed = 20f;
+        private float enemySpeed = 100f;
         private float projectileCooldown = 2f; // Cooldown duration in seconds
         private float timeSinceLastProjectile = 0f;
         private Vector2 playerDirection = Vector2.UnitX;
+        private SpriteFont _font;
         //Estado do jogo
         private enum GameState
         {
@@ -80,6 +81,9 @@ namespace projeto_jogo
             
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            //debug
+
+            _font = Content.Load<SpriteFont>("Menu/Font_menu"); // Make sure the name matches your .spritefont file
 
             //Carregar texturas
             PlayerTexture = Content.Load<Texture2D>("Character4");
@@ -90,8 +94,8 @@ namespace projeto_jogo
             //Adicionar inimigos a lista
             _enemies = new List<Enemy>
             {
-                new Enemy(enemyTexture, new Vector2(2600, 100), enemySpeed),
-                new Enemy(enemyTexture, new Vector2(3300, 100), enemySpeed)
+                new Enemy(enemyTexture, new Vector2(2600, 500), enemySpeed),
+                new Enemy(enemyTexture, new Vector2(3300, 500), enemySpeed)
             };
 
             //Guardar as posições iniciais dos inimigos
@@ -100,12 +104,12 @@ namespace projeto_jogo
                 _initialEnemyPositions.Add(enemy.Position);
             }
 
-            _character = new Personagem(PlayerTexture, new Vector2(2400, 100));
+            _character = new Personagem(PlayerTexture, new Vector2(2400, 550));
 
             //Criar plataformas e adicionar a lista
             _platforms = new List<Plataform>();
-            _platforms.Add(new Plataform(plataformTexture, new Vector2(2400, 300)));
-            _platforms.Add(new Plataform(plataformTexture, new Vector2(3100, 300)));
+            _platforms.Add(new Plataform(plataformTexture, new Vector2(2400, 600)));
+            _platforms.Add(new Plataform(plataformTexture, new Vector2(3100, 600)));
 
 
 
@@ -140,7 +144,7 @@ namespace projeto_jogo
         {
 
             // Reniciar o personagem
-            _character.Position = new Vector2(2400, 100);
+            _character.Position = new Vector2(2400, 550);
             _character.Velocity = Vector2.Zero;
             _character.IsOnGround = false;
 
@@ -191,12 +195,13 @@ namespace projeto_jogo
         private void LaunchProjectile()
         {
             // Create and add a new projectile to the list
-            _projectiles.Add(new Projectile(projectileTexture, _character.Position, new Vector2(100, 0)* playerDirection, 5f)); // Adjust velocity as needed
+            _projectiles.Add(new Projectile(projectileTexture, _character.Position, new Vector2(500, 0)* playerDirection, 5f)); // Adjust velocity as needed
         }
 
 
 
         private void UpdateGame(float deltaTime, GameTime gameTime)
+
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
@@ -327,7 +332,11 @@ namespace projeto_jogo
                 ResetGame();
             }
 
-            _cameraPosition.X = Math.Max(_character.Position.X - (_graphics.PreferredBackBufferWidth / 2), 0);
+            _cameraPosition.X = _character.Position.X - (_graphics.PreferredBackBufferWidth / 2);
+
+            // Calculate the camera position so that it follows the player upwards but not downwards
+            // Clamp the camera position to prevent it from moving below y = 0
+            _cameraPosition.Y = Math.Min(_character.Position.Y - (_graphics.PreferredBackBufferHeight / 2), 0);
 
             
 
@@ -337,7 +346,10 @@ namespace projeto_jogo
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            _spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, null, null, null, Matrix.CreateTranslation(-_cameraPosition.X, 0, 0));
+            _spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, null, null, null, Matrix.CreateTranslation(-_cameraPosition.X, -_cameraPosition.Y, 0));
+
+
+
 
             if (_gameState == GameState.Menu)
             {
@@ -362,17 +374,26 @@ namespace projeto_jogo
                 }
                 _spriteBatch.Draw(pixelTexture, _character.BoundingBox, Color.Red * 0.5f);
                 _spriteBatch.Draw(_character.Texture, _character.Position, Color.White);
-               
-                
+
+
+                foreach (var projectile in _projectiles)
+                {
+                    projectile.Draw(_spriteBatch);
+                }
+
+                string positionText = $" Player Position: {_character.Position.X}, {_character.Position.Y}";
+                _spriteBatch.DrawString(_font, positionText, _cameraPosition+new Vector2(0,45), Color.White);
+
+
+                string positionCameraText = $" Camera Position: {_cameraPosition.X}, {_cameraPosition.Y}";
+                _spriteBatch.DrawString(_font, positionCameraText, _cameraPosition+new Vector2(0,20), Color.White);
+
+
             }
 
 
 
-            foreach (var projectile in _projectiles)
-            {
-                projectile.Draw(_spriteBatch);
-            }
-
+          
 
             _spriteBatch.End();
             base.Draw(gameTime);

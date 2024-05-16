@@ -11,16 +11,20 @@
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Personagem.cs",
               "DocumentMoniker": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Personagem.cs",
               "RelativeDocumentMoniker": "Personagem.cs",
@@ -43,8 +47,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T15:53:42.845Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -52,7 +55,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Menu.cs",
+              "RelativeDocumentMoniker": "Menu.cs",
+              "ToolTip": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Menu.cs",
+              "RelativeToolTip": "Menu.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBkAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T08:40:34.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Plataform.cs",
               "DocumentMoniker": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Plataform.cs",
               "RelativeDocumentMoniker": "Plataform.cs",
@@ -60,12 +76,11 @@
               "RelativeToolTip": "Plataform.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T16:21:47.764Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-13T16:21:47.764Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemy.cs",
@@ -73,8 +88,7 @@
               "RelativeToolTip": "Enemy.cs",
               "ViewState": "AQIAACIAAAAAAAAAAADwvxQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T17:26:19.455Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-15T17:26:19.455Z"
             },
             {
               "$type": "Document",
@@ -84,7 +98,7 @@
               "RelativeDocumentMoniker": "Projectile.cs",
               "ToolTip": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Projectile.cs",
               "RelativeToolTip": "Projectile.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB8AAAAAAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACkAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-15T22:13:48.451Z",
               "EditorCaption": ""
@@ -97,7 +111,7 @@
               "RelativeDocumentMoniker": "Game1.cs",
               "ToolTip": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Game1.cs*",
               "RelativeToolTip": "Game1.cs*",
-              "ViewState": "AQIAAKIAAAAAAAAAAAAmwMEAAABxAAAA",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAcwJIAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-13T15:33:50.755Z",
               "EditorCaption": ""
