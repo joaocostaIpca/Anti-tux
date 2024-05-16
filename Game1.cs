@@ -22,10 +22,10 @@ namespace projeto_jogo
         private Texture2D _backgroundLayer3;
         private Texture2D _backgroundLayer4;
         private Texture2D pixelTexture;
-        private Texture2D projectileTexture;
-        
-        
-       
+        private Texture2D[] projectileTexture;
+        private Texture2D[] _coinFrames;
+
+
 
         //Classes do jogo
         private Personagem _character;
@@ -33,7 +33,7 @@ namespace projeto_jogo
         private Menu _menu;
         private List<Enemy> _enemies;
         private List<Projectile> _projectiles = new List<Projectile>();
-
+        private List<Coin> _coins;
 
         //Variaveis do jogo
         private List<Vector2> _initialEnemyPositions = new List<Vector2>();
@@ -45,6 +45,13 @@ namespace projeto_jogo
         private float timeSinceLastProjectile = 0f;
         private Vector2 playerDirection = Vector2.UnitX;
         private SpriteFont _font;
+        private int _collectedCoins;
+
+
+
+      
+
+
         //Estado do jogo
         private enum GameState
         {
@@ -83,14 +90,29 @@ namespace projeto_jogo
 
             //debug
 
-            _font = Content.Load<SpriteFont>("Menu/Font_menu"); // Make sure the name matches your .spritefont file
+            _font = Content.Load<SpriteFont>("Menu/Font_menu"); 
+
+
+            _coinFrames = new Texture2D[16];
+            for (int i = 0; i < 16; i++)
+            {
+                _coinFrames[i] = Content.Load<Texture2D>($"Coin/coin-{i}"); 
+            }
+
+
+            projectileTexture = new Texture2D[4];
+            for (int i = 0; i < 4; i++)
+            {
+                projectileTexture[i] = Content.Load<Texture2D>($"Projectile/fire_bullet-{i}"); 
+            }
+
 
             //Carregar texturas
-            PlayerTexture = Content.Load<Texture2D>("Character4");
+            PlayerTexture = Content.Load<Texture2D>("Player/Move/Run-1");
             plataformTexture = Content.Load<Texture2D>("platform_texture");
             enemyTexture = Content.Load<Texture2D>("Enemy/stand-0");
             pixelTexture = Content.Load<Texture2D>("pixel");
-            projectileTexture = Content.Load<Texture2D>("projectile");
+            
             //Adicionar inimigos a lista
             _enemies = new List<Enemy>
             {
@@ -109,10 +131,21 @@ namespace projeto_jogo
             //Criar plataformas e adicionar a lista
             _platforms = new List<Plataform>();
             _platforms.Add(new Plataform(plataformTexture, new Vector2(2400, 600)));
-            _platforms.Add(new Plataform(plataformTexture, new Vector2(3100, 600)));
+            _platforms.Add(new Plataform(plataformTexture, new Vector2(3200, 600)));
+            _platforms.Add(new Plataform(plataformTexture, new Vector2(4000, 470)));
+            _platforms.Add(new Plataform(plataformTexture, new Vector2(4950, 550)));
 
 
+            //criar coins
+            _coins = new List<Coin>
+            {
+                new Coin(_coinFrames, new Vector2(2650, 550)),
+                new Coin(_coinFrames, new Vector2(4200, 430)),
+          
+            };
 
+
+            //work in progress
             _backgroundLayer1 = Content.Load<Texture2D>("Background/background1");
             _backgroundLayer2 = Content.Load<Texture2D>("Background/background2");
             _backgroundLayer3 = Content.Load<Texture2D>("Background/background3");
@@ -275,20 +308,43 @@ namespace projeto_jogo
 
 
 
-           
+
+            //Gere as moedas
+
+            foreach (var coin in _coins)
+            {
+                coin.Update(deltaTime);
+            }
+
+            // Check for coin collection
+            for (int i = _coins.Count - 1; i >= 0; i--)
+            {
+                if (_character.BoundingBox.Intersects(_coins[i].BoundingBox))
+                {
+                    _coins.RemoveAt(i);
+                    _collectedCoins++;
+                }
+            }
+
+
+
+
+
+
+
             //Gere a interação com as plataformas
             foreach (var platform in _platforms)
             {
                     if (_character.BoundingBox.Intersects(platform.BoundingBox)&& _character.BoundingBox.Bottom >= platform.BoundingBox.Top)
                    
                     {
-                        // Adjust player position to prevent clipping into the platform
+                       
                         _character.Position = new Vector2(_character.Position.X, platform.Position.Y - _character.Texture.Height);
-                        _character.Velocity = new Vector2(_character.Velocity.X, Math.Max(0, _character.Velocity.Y)); // Prevent downward velocity
+                        _character.Velocity = new Vector2(_character.Velocity.X, Math.Max(0, _character.Velocity.Y));
 
-                        // Update player's on-ground status
+                        
                         isOnPlatform = true;
-                        break; // Stop checking further platforms as the character is already on one
+                        break; 
                     }
             }
              _character.IsOnGround = isOnPlatform;
@@ -316,13 +372,13 @@ namespace projeto_jogo
 
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
-                _character.Position = new Vector2(_character.Position.X - 150 * deltaTime, _character.Position.Y);
+                _character.Position = new Vector2(_character.Position.X - 250 * deltaTime, _character.Position.Y);
                 playerDirection = -Vector2.UnitX;
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
-                _character.Position = new Vector2(_character.Position.X + 150 * deltaTime, _character.Position.Y);
+                _character.Position = new Vector2(_character.Position.X + 250 * deltaTime, _character.Position.Y);
                 playerDirection = Vector2.UnitX;
             }
 
@@ -358,12 +414,12 @@ namespace projeto_jogo
             else if (_gameState == GameState.Playing)
             {
 
-
+                //Desenha as plataformas
                 foreach (var platform in _platforms)
                 {
                     platform.Draw(_spriteBatch);
                 }
-
+                //desenha os inimigos
                 foreach (var enemy in _enemies)
                 {
                     if (_enemies != null)
@@ -372,22 +428,36 @@ namespace projeto_jogo
                         enemy.Draw(_spriteBatch);
                     }
                 }
+
+                //Hitboxes do player
                 _spriteBatch.Draw(pixelTexture, _character.BoundingBox, Color.Red * 0.5f);
                 _spriteBatch.Draw(_character.Texture, _character.Position, Color.White);
 
-
+                //Desenha os projetis
                 foreach (var projectile in _projectiles)
                 {
                     projectile.Draw(_spriteBatch);
                 }
 
-                string positionText = $" Player Position: {_character.Position.X}, {_character.Position.Y}";
-                _spriteBatch.DrawString(_font, positionText, _cameraPosition+new Vector2(0,45), Color.White);
+                //Desenha as moedas
+                foreach (var coin in _coins)
+                {
+                    coin.Draw(_spriteBatch);
+                }
 
 
+                //Contador coins
+                _spriteBatch.DrawString(_font, "Coins: " + _collectedCoins, _cameraPosition+ new Vector2(0, 20), Color.White);
+
+                //debug player position
+                 string positionText = $" Player Position: {_character.Position.X}, {_character.Position.Y}";
+                _spriteBatch.DrawString(_font, positionText, _cameraPosition+new Vector2(0,70), Color.White);
+                //debug camera position
                 string positionCameraText = $" Camera Position: {_cameraPosition.X}, {_cameraPosition.Y}";
-                _spriteBatch.DrawString(_font, positionCameraText, _cameraPosition+new Vector2(0,20), Color.White);
-
+                _spriteBatch.DrawString(_font, positionCameraText, _cameraPosition+new Vector2(0,45), Color.White);
+                //debug checka colision com o ground
+                string isonground = $" Estado da colision: {_character.IsOnGround}";
+                _spriteBatch.DrawString(_font, isonground, _cameraPosition + new Vector2(0, 95), Color.White);
 
             }
 

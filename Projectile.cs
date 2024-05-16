@@ -12,22 +12,29 @@ namespace projeto_jogo
     {
         public Vector2 Position { get; set; }
         public Vector2 Velocity { get; set; }
-        public Texture2D Texture { get; set; }
 
-        public Rectangle BoundingBox => new Rectangle((int)Position.X, (int)Position.Y, Texture.Width, Texture.Height);
+        //Gere animação
+        private Texture2D[] Frames { get; set; }
+        private int currentFrame;
+        private float frameTime;
+        private float timeSinceLastFrame;
+        private const float frameDuration = 0.1f; // Adjust this for desired frame rate
 
-        private float lifetime; 
-        private float timeAlive; 
+        private float lifetime;
+        private float timeAlive;
 
+        public Rectangle BoundingBox => new Rectangle((int)Position.X, (int)Position.Y, Frames[0].Width, Frames[0].Height);
 
-
-        public Projectile(Texture2D texture, Vector2 position, Vector2 velocity, float lifetime)
+        public Projectile(Texture2D[] frames, Vector2 position, Vector2 velocity, float lifetime)
         {
-            Texture = texture;
+            Frames = frames;
             Position = position;
             Velocity = velocity;
-            this.lifetime = lifetime; 
+            this.lifetime = lifetime;
             timeAlive = 0f;
+            currentFrame = 0;
+            frameTime = 0;
+            timeSinceLastFrame = 0;
         }
 
         public void Update(float deltaTime)
@@ -37,11 +44,19 @@ namespace projeto_jogo
 
             // Update projectile position based on velocity
             Position += Velocity * deltaTime;
+
+
+            timeSinceLastFrame += deltaTime;
+            if (timeSinceLastFrame >= frameDuration)
+            {
+                currentFrame = (currentFrame + 1) % Frames.Length;
+                timeSinceLastFrame = 0;
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Texture, Position, Color.White);
+            spriteBatch.Draw(Frames[currentFrame], Position, Color.White);
         }
 
 
