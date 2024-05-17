@@ -1,18 +1,18 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+
 namespace projeto_jogo
 {
     public class Coin
     {
         public Vector2 Position { get; set; }
         private Texture2D[] Frames { get; set; }
+        
         private int currentFrame;
-        private float frameTime;
+    
         private float timeSinceLastFrame;
         private const float frameDuration = 0.1f; 
 
@@ -23,8 +23,9 @@ namespace projeto_jogo
             Frames = frames;
             Position = position;
             currentFrame = 0;
-            frameTime = 0;
             timeSinceLastFrame = 0;
+
+
         }
 
         public void Update(float deltaTime)
@@ -40,6 +41,23 @@ namespace projeto_jogo
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Frames[currentFrame], Position, Color.White);
+        }
+
+        public static List<Coin> CreateCoins(ContentManager content)
+        {
+            var frames = new Texture2D[16];
+            for (int i = 0; i < 16; i++)
+            {
+                frames[i] = content.Load<Texture2D>($"Coin/coin-{i}");
+            }
+
+            var coins = new List<Coin>
+            {
+                new Coin(frames, new Vector2(2650, 550)),
+                new Coin(frames, new Vector2(4200, 430))
+            };
+
+            return coins;
         }
     }
 }

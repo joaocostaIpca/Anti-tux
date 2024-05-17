@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 
 namespace projeto_jogo
 {
@@ -16,7 +17,7 @@ namespace projeto_jogo
         //Gere animação
         private Texture2D[] Frames { get; set; }
         private int currentFrame;
-        private float frameTime;
+
         private float timeSinceLastFrame;
         private const float frameDuration = 0.1f; // Adjust this for desired frame rate
 
@@ -33,9 +34,15 @@ namespace projeto_jogo
             this.lifetime = lifetime;
             timeAlive = 0f;
             currentFrame = 0;
-            frameTime = 0;
             timeSinceLastFrame = 0;
+
+
+
+
         }
+
+        
+
 
         public void Update(float deltaTime)
         {
@@ -63,6 +70,16 @@ namespace projeto_jogo
         public bool IsExpired()
         {
             return timeAlive >= lifetime;
+        }
+
+        public static Texture2D[] LoadFrames(ContentManager content)
+        {
+            var frames = new Texture2D[4];
+            for (int i = 0; i < 4; i++)
+            {
+                frames[i] = content.Load<Texture2D>($"Projectile/fire_bullet-{i}");
+            }
+            return frames;
         }
 
     }

@@ -25,7 +25,7 @@ namespace projeto_jogo
             _exitButtonTexture = content.Load<Texture2D>("Menu/exit_button");
             _font = content.Load<SpriteFont>("Menu/Font_menu"); // carrega a fonte para o texto
             _texto = "Trabalho Realizado por : Afonso Paiva / Joao Costa / Rafael Santos";
-       
+            
 
 
             // Posicionamento dos botões

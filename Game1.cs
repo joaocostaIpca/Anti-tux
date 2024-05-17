@@ -17,13 +17,8 @@ namespace projeto_jogo
         private Texture2D plataformTexture;
         private Texture2D PlayerTexture;
         private Texture2D enemyTexture;
-        private Texture2D _backgroundLayer1;
-        private Texture2D _backgroundLayer2;
-        private Texture2D _backgroundLayer3;
-        private Texture2D _backgroundLayer4;
         private Texture2D pixelTexture;
         private Texture2D[] projectileTexture;
-        private Texture2D[] _coinFrames;
 
 
 
@@ -58,7 +53,6 @@ namespace projeto_jogo
             Menu,
             Playing,
             GameOver
-
         }
 
         private GameState _gameState = GameState.Menu;
@@ -77,56 +71,46 @@ namespace projeto_jogo
         protected override void Initialize()
 
         {
-            
-
-
             base.Initialize();
         }
 
+        //===============================CONTENT===========================
         protected override void LoadContent()
         {
-            
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            //debug
 
-            _font = Content.Load<SpriteFont>("Menu/Font_menu"); 
+            //===============================MENU===========================
+            _font = Content.Load<SpriteFont>("Menu/Font_menu"); //fonte do debug !
 
-
-            _coinFrames = new Texture2D[16];
-            for (int i = 0; i < 16; i++)
-            {
-                _coinFrames[i] = Content.Load<Texture2D>($"Coin/coin-{i}"); 
-            }
+            _menu = new Menu(Content, _graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
 
 
-            projectileTexture = new Texture2D[4];
-            for (int i = 0; i < 4; i++)
-            {
-                projectileTexture[i] = Content.Load<Texture2D>($"Projectile/fire_bullet-{i}"); 
-            }
+            // ===============================COINS========================
+
+            _coins = Coin.CreateCoins(Content);
+
+            // ==============================PROJETEIS=====================
+
+            projectileTexture = Projectile.LoadFrames(Content);
 
 
-            //Carregar texturas
-            PlayerTexture = Content.Load<Texture2D>("Player/Move/Run-1");
-            plataformTexture = Content.Load<Texture2D>("platform_texture");
-            enemyTexture = Content.Load<Texture2D>("Enemy/stand-0");
+            //===============================ENIMIGOS=====================
+
+
             pixelTexture = Content.Load<Texture2D>("pixel");
-            
-            //Adicionar inimigos a lista
-            _enemies = new List<Enemy>
-            {
-                new Enemy(enemyTexture, new Vector2(2600, 500), enemySpeed),
-                new Enemy(enemyTexture, new Vector2(3300, 500), enemySpeed)
-            };
 
-            //Guardar as posições iniciais dos inimigos
-            foreach (var enemy in _enemies)
-            {
-                _initialEnemyPositions.Add(enemy.Position);
-            }
+            (enemyTexture, pixelTexture) = (Content.Load<Texture2D>("Enemy/stand-0"), Content.Load<Texture2D>("pixel"));
 
-            _character = new Personagem(PlayerTexture, new Vector2(2400, 550));
+            (_enemies, _initialEnemyPositions) = Enemy.CreateEnemies(Content, enemySpeed);
+
+
+
+
+
+            //===============================PLATAFORMA=====================
+
+            plataformTexture = Content.Load<Texture2D>("platform_texture");
 
             //Criar plataformas e adicionar a lista
             _platforms = new List<Plataform>();
@@ -136,24 +120,46 @@ namespace projeto_jogo
             _platforms.Add(new Plataform(plataformTexture, new Vector2(4950, 550)));
 
 
-            //criar coins
-            _coins = new List<Coin>
-            {
-                new Coin(_coinFrames, new Vector2(2650, 550)),
-                new Coin(_coinFrames, new Vector2(4200, 430)),
-          
-            };
+
+            //===============================PERSONAGEM=====================
+            PlayerTexture = Content.Load<Texture2D>("Player/Move/run-1");
+
+            _character = new Personagem(PlayerTexture, new Vector2(2400, 550));
 
 
-            //work in progress
-            _backgroundLayer1 = Content.Load<Texture2D>("Background/background1");
-            _backgroundLayer2 = Content.Load<Texture2D>("Background/background2");
-            _backgroundLayer3 = Content.Load<Texture2D>("Background/background3");
-            _backgroundLayer4 = Content.Load<Texture2D>("Background/background4a");
+            //DEPOIS EDITAR MOVIMENTO PERSONAGEM
 
-            //inciar o menu
-            _menu = new Menu(Content, _graphics.PreferredBackBufferWidth, _graphics.PreferredBackBufferHeight);
+           
         }
+
+
+
+
+
+
+        //!!!!!!!!!!!!!!!!!!!!!!!!! ATENÇÃO DAQUI PARA BAIXO NÃO ESTÁ ORGANIZADO ORGANIZEM  METAM O MINIMO
+        //POSSIVEL NESTA CLASSE PASSEM PARA AS OUTRAS CLASSES O QUE FALTA DAQUI PARA BAIXO
+        //AINDA TEM DE SE ORANIZAR MLHR A DAS PLATAFORMAS N SE ENTENDE NADA 
+        //A SUA ESTRUTURA N FAZ SENTIDO
+        //VAI FICAR AINDA MAIS DIFICIL QND FOR PARA FAZER OS TILE MAPS E ASSIM
+        //NUMA METAS CENAS RANDOM NO GAME 1 TIPO DEFENIÇÕES OU ASISM APENAS OU CONTEUDO, APENAS CHAMA DAS OUTRAS CLASSES
+        //ESSE É O OBJ DE TER CLASSES DIFERENTES FAZ COMO ESTÁ O MENU 
+        //A CLASS DAS PLATAFORMAS N ESTAS A USAR PARA NADA QUASE TENTA FAZER MAISTRANSFERENCIAS DE CENAS
+        //!!!!!!!!!!!!!!!!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //===============================UPDATE=====================
 
         protected override void Update(GameTime gameTime)
         {
@@ -171,29 +177,6 @@ namespace projeto_jogo
 
             base.Update(gameTime);
         }
-
-
-        private void ResetGame()
-        {
-
-            // Reniciar o personagem
-            _character.Position = new Vector2(2400, 550);
-            _character.Velocity = Vector2.Zero;
-            _character.IsOnGround = false;
-
-            // Dá respawn aos inimigos
-            RespawnEnemies();
-            foreach (var enemy in _enemies)
-            {
-                enemy.Position = enemy.InitialPosition; // Reset to initial position
-                enemy.Velocity = Vector2.Zero;
-            }
-            // Reset camera position
-            _cameraPosition = Vector2.Zero;
-
-            // Additional reset logic if needed
-        }
-
         private void UpdateMenu()
         {
             // Atualiza o menu
@@ -211,28 +194,6 @@ namespace projeto_jogo
                 Exit();
             }
         }
-
-
-        private void RespawnEnemies()
-        {
-            _enemies.Clear(); // Clear existing enemies
-
-            // Create new enemies at initial positions
-            foreach (var initialEnemyPosition in _initialEnemyPositions)
-            {
-                _enemies.Add(new Enemy(enemyTexture, initialEnemyPosition, enemySpeed));
-            }
-        }
-
-
-        private void LaunchProjectile()
-        {
-            // Create and add a new projectile to the list
-            _projectiles.Add(new Projectile(projectileTexture, _character.Position, new Vector2(500, 0)* playerDirection, 5f)); // Adjust velocity as needed
-        }
-
-
-
         private void UpdateGame(float deltaTime, GameTime gameTime)
 
         {
@@ -398,14 +359,17 @@ namespace projeto_jogo
 
 
         }
+
+
+
+
+
+        // ======================================DRAW=============================
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             _spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.LinearWrap, null, null, null, Matrix.CreateTranslation(-_cameraPosition.X, -_cameraPosition.Y, 0));
-
-
-
 
             if (_gameState == GameState.Menu)
             {
@@ -414,11 +378,17 @@ namespace projeto_jogo
             else if (_gameState == GameState.Playing)
             {
 
+
+
                 //Desenha as plataformas
                 foreach (var platform in _platforms)
                 {
                     platform.Draw(_spriteBatch);
                 }
+
+
+
+
                 //desenha os inimigos
                 foreach (var enemy in _enemies)
                 {
@@ -429,9 +399,8 @@ namespace projeto_jogo
                     }
                 }
 
-                //Hitboxes do player
-                _spriteBatch.Draw(pixelTexture, _character.BoundingBox, Color.Red * 0.5f);
-                _spriteBatch.Draw(_character.Texture, _character.Position, Color.White);
+                
+                
 
                 //Desenha os projetis
                 foreach (var projectile in _projectiles)
@@ -449,6 +418,11 @@ namespace projeto_jogo
                 //Contador coins
                 _spriteBatch.DrawString(_font, "Coins: " + _collectedCoins, _cameraPosition+ new Vector2(0, 20), Color.White);
 
+
+
+
+                // ======================================DEBUGS================================================
+
                 //debug player position
                  string positionText = $" Player Position: {_character.Position.X}, {_character.Position.Y}";
                 _spriteBatch.DrawString(_font, positionText, _cameraPosition+new Vector2(0,70), Color.White);
@@ -458,15 +432,61 @@ namespace projeto_jogo
                 //debug checka colision com o ground
                 string isonground = $" Estado da colision: {_character.IsOnGround}";
                 _spriteBatch.DrawString(_font, isonground, _cameraPosition + new Vector2(0, 95), Color.White);
+                //Hitbox do player
+                _spriteBatch.Draw(pixelTexture, _character.BoundingBox, Color.Red * 0.5f);
+
+                // =============================================================================================
 
             }
-
-
-
-          
 
             _spriteBatch.End();
             base.Draw(gameTime);
         }
+
+
+
+        private void LaunchProjectile()
+        {
+            // Create and add a new projectile to the list
+            _projectiles.Add(new Projectile(projectileTexture, _character.Position, new Vector2(500, 0) * playerDirection, 5f));
+        }
+
+
+
+        // ======================================RESET DO JOGO=============================
+        private void RespawnEnemies()
+        {
+            _enemies.Clear(); // Clear existing enemies
+
+            // Create new enemies at initial positions
+            foreach (var initialEnemyPosition in _initialEnemyPositions)
+            {
+                _enemies.Add(new Enemy(enemyTexture, initialEnemyPosition, enemySpeed));
+            }
+        }
+
+        private void ResetGame()
+        {
+
+            // Reniciar o personagem
+            _character.Position = new Vector2(2400, 550);
+            _character.Velocity = Vector2.Zero;
+            _character.IsOnGround = false;
+
+            // Dá respawn aos inimigos
+            RespawnEnemies();
+            foreach (var enemy in _enemies)
+            {
+                enemy.Position = enemy.InitialPosition; // Reset to initial position
+                enemy.Velocity = Vector2.Zero;
+            }
+
+            // Reset camera position
+            _cameraPosition = Vector2.Zero;
+
+        }
+
+        
+
     }
 }

@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\",
+  "WorkspaceRootPath": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\documents\\uni\\2\u00BA semestre\\t\u00E9cnicas de desenvolvimento de videojogos\\anti_tux_git\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\documents\\uni\\2\u00BA semestre\\t\u00E9cnicas de desenvolvimento de videojogos\\anti_tux_git\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\documents\\uni\\2\u00BA semestre\\t\u00E9cnicas de desenvolvimento de videojogos\\anti_tux_git\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\costa\\source\\repos\\anti-tux\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\documents\\uni\\2\u00BA semestre\\t\u00E9cnicas de desenvolvimento de videojogos\\anti_tux_git\\plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,63 +26,62 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Personagem.cs",
-              "DocumentMoniker": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Personagem.cs",
-              "RelativeDocumentMoniker": "Personagem.cs",
-              "ToolTip": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Personagem.cs",
-              "RelativeToolTip": "Personagem.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-13T15:53:42.845Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Game1.cs",
-              "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Game1.cs",
-              "RelativeToolTip": "Game1.cs",
-              "ViewState": "AQIAAFcAAAAAAAAAAAD4v3IAAABGAAAA",
+              "DocumentIndex": 3,
+              "Title": "Plataform.cs",
+              "DocumentMoniker": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Plataform.cs",
+              "RelativeDocumentMoniker": "Plataform.cs",
+              "ToolTip": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Plataform.cs",
+              "RelativeToolTip": "Plataform.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAmwBwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T18:30:43.259Z",
+              "WhenOpened": "2024-05-17T19:21:11.292Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Coin.cs",
-              "DocumentMoniker": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Coin.cs",
-              "RelativeDocumentMoniker": "Coin.cs",
-              "ToolTip": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Coin.cs",
-              "RelativeToolTip": "Coin.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAyAAAA",
+              "DocumentIndex": 1,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Enemy.cs",
+              "RelativeDocumentMoniker": "Enemy.cs",
+              "ToolTip": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Enemy.cs*",
+              "RelativeToolTip": "Enemy.cs*",
+              "ViewState": "AQIAABUAAAAAAAAAAAAnwCIAAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T18:29:50.969Z",
+              "WhenOpened": "2024-05-17T19:18:52.538Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Projectile.cs",
-              "DocumentMoniker": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Projectile.cs",
-              "RelativeDocumentMoniker": "Projectile.cs",
-              "ToolTip": "C:\\Users\\Costa\\source\\repos\\Anti-tux\\Projectile.cs",
-              "RelativeToolTip": "Projectile.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAA3wCMAAAAJAAAA",
+              "Title": "Personagem.cs",
+              "DocumentMoniker": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Personagem.cs",
+              "RelativeDocumentMoniker": "Personagem.cs",
+              "ToolTip": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Personagem.cs",
+              "RelativeToolTip": "Personagem.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAwA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T18:44:19.108Z",
+              "WhenOpened": "2024-05-17T17:24:52.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Game1.cs",
+              "DocumentMoniker": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Game1.cs",
+              "RelativeDocumentMoniker": "Game1.cs",
+              "ToolTip": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Game1.cs",
+              "RelativeToolTip": "Game1.cs",
+              "ViewState": "AQIAAGkBAAAAAAAAAAAawH8BAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T18:30:43.259Z",
               "EditorCaption": ""
             }
           ]

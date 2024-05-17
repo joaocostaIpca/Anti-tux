@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 
 namespace projeto_jogo
 {
@@ -85,6 +86,25 @@ namespace projeto_jogo
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Texture, Position, Color.White);
+        }
+
+        public static (List<Enemy>, List<Vector2>) CreateEnemies(ContentManager content, float enemySpeed)
+        {
+            Texture2D enemyTexture = content.Load<Texture2D>("Enemy/stand-0");
+
+            var enemies = new List<Enemy>
+            {
+                new Enemy(enemyTexture, new Vector2(2600, 500), enemySpeed),
+                new Enemy(enemyTexture, new Vector2(3300, 500), enemySpeed)
+            };
+
+            var initialPositions = new List<Vector2>();
+            foreach (var enemy in enemies)
+            {
+                initialPositions.Add(enemy.Position);
+            }
+
+            return (enemies, initialPositions);
         }
     }
 
