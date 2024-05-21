@@ -15,7 +15,6 @@ namespace projeto_jogo
 
         //Texturas
         private Texture2D plataformTexture;
-        private Texture2D PlayerTexture;
         private Texture2D enemyTexture;
         private Texture2D pixelTexture;
         private Texture2D[] projectileTexture;
@@ -33,7 +32,7 @@ namespace projeto_jogo
         //Variaveis do jogo
         private List<Vector2> _initialEnemyPositions = new List<Vector2>();
         private Vector2 _cameraPosition;
-        private float _gravity = 400f;
+        private float _gravity = 500f;
         private float enemyFollowRange = 200f; // Adjust the range as needed
         private float enemySpeed = 100f;
         private float projectileCooldown = 2f; // Cooldown duration in seconds
@@ -122,30 +121,24 @@ namespace projeto_jogo
 
 
             //===============================PERSONAGEM=====================
-            PlayerTexture = Content.Load<Texture2D>("Player/Move/run-1");
+            var idleAnimation = new Animation(LoadAnimationFrames("Player/Idle/idle-", 12), 0.2f);
+            var runAnimation = new Animation(LoadAnimationFrames("Player/Move/run-", 8), 0.1f);
+            var jumpAnimation = new Animation(LoadAnimationFrames("Player/Jump/jump-", 8), 0.4f);
 
-            _character = new Personagem(PlayerTexture, new Vector2(2400, 550));
+            var animations = new Dictionary<string, Animation>
+            {
+                { "idle", idleAnimation },
+                { "run", runAnimation },
+                { "jump", jumpAnimation }
+            };
+            _character = new Personagem(animations, new Vector2(2400, 500));
+           
 
 
             //DEPOIS EDITAR MOVIMENTO PERSONAGEM
 
            
         }
-
-
-
-
-
-
-        //!!!!!!!!!!!!!!!!!!!!!!!!! ATENÇÃO DAQUI PARA BAIXO NÃO ESTÁ ORGANIZADO ORGANIZEM  METAM O MINIMO
-        //POSSIVEL NESTA CLASSE PASSEM PARA AS OUTRAS CLASSES O QUE FALTA DAQUI PARA BAIXO
-        //AINDA TEM DE SE ORANIZAR MLHR A DAS PLATAFORMAS N SE ENTENDE NADA 
-        //A SUA ESTRUTURA N FAZ SENTIDO
-        //VAI FICAR AINDA MAIS DIFICIL QND FOR PARA FAZER OS TILE MAPS E ASSIM
-        //NUMA METAS CENAS RANDOM NO GAME 1 TIPO DEFENIÇÕES OU ASISM APENAS OU CONTEUDO, APENAS CHAMA DAS OUTRAS CLASSES
-        //ESSE É O OBJ DE TER CLASSES DIFERENTES FAZ COMO ESTÁ O MENU 
-        //A CLASS DAS PLATAFORMAS N ESTAS A USAR PARA NADA QUASE TENTA FAZER MAISTRANSFERENCIAS DE CENAS
-        //!!!!!!!!!!!!!!!!!!!
 
 
 
@@ -250,19 +243,13 @@ namespace projeto_jogo
                 // Check for collision with the player
                 if (_character.BoundingBox.Intersects(enemy.BoundingBox))
                 {
-                    // Check if the player is landing on top of the enemy
-                    if (_character.BoundingBox.Bottom <= enemy.BoundingBox.Top + _character.Velocity.Y * deltaTime)
-                    {
-                        // Remove the enemy from the list
-                        _enemies.RemoveAt(i);
-                    }
-                    else
-                    {
+                    
+                    
                         // Reset the game and switch to menu state
                         ResetGame();
                         _gameState = GameState.Menu;
                         return;
-                    }
+                    
                 }
             }
 
@@ -299,9 +286,9 @@ namespace projeto_jogo
                     if (_character.BoundingBox.Intersects(platform.BoundingBox)&& _character.BoundingBox.Bottom >= platform.BoundingBox.Top)
                    
                     {
-                       
-                        _character.Position = new Vector2(_character.Position.X, platform.Position.Y - _character.Texture.Height);
-                        _character.Velocity = new Vector2(_character.Velocity.X, Math.Max(0, _character.Velocity.Y));
+
+                    _character.Position = new Vector2(_character.Position.X, platform.Position.Y - _character.GetCurrentFrameHeight());
+                    _character.Velocity = new Vector2(_character.Velocity.X, Math.Max(0, _character.Velocity.Y));
 
                         
                         isOnPlatform = true;
@@ -326,22 +313,32 @@ namespace projeto_jogo
             // Gere o input do jogador 
 
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Space) && _character.IsOnGround)
+            if (Keyboard.GetState().IsKeyDown(Keys.Space) && _character.IsOnGround )
             {
                 _character.Velocity = new Vector2(_character.Velocity.X, -300);
+                _character.SetAnimation("jump");
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Left))
+
+            else if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
                 _character.Position = new Vector2(_character.Position.X - 250 * deltaTime, _character.Position.Y);
+                _character.SetAnimation("run");
+                _character.isFacingRight = false;
                 playerDirection = -Vector2.UnitX;
             }
-
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            else if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
                 _character.Position = new Vector2(_character.Position.X + 250 * deltaTime, _character.Position.Y);
+                _character.SetAnimation("run");
+                _character.isFacingRight = true;
                 playerDirection = Vector2.UnitX;
             }
+            else if (_character.IsOnGround && _character.Velocity.X==0 )
+            {
+                _character.SetAnimation("idle");
+            }
+            _character.Update(deltaTime);
 
             if (_character.Position.Y > GraphicsDevice.Viewport.Height)
             {
@@ -394,7 +391,7 @@ namespace projeto_jogo
                 {
                     if (_enemies != null)
                     {
-                        _spriteBatch.Draw(pixelTexture, enemy.BoundingBox, Color.Red * 0.5f);
+                        //Draw hitbox do inimigo   _spriteBatch.Draw(pixelTexture, enemy.BoundingBox, Color.Red * 0.5f);
                         enemy.Draw(_spriteBatch);
                     }
                 }
@@ -418,13 +415,13 @@ namespace projeto_jogo
                 //Contador coins
                 _spriteBatch.DrawString(_font, "Coins: " + _collectedCoins, _cameraPosition+ new Vector2(0, 20), Color.White);
 
-
+                _character.Draw(_spriteBatch);
 
 
                 // ======================================DEBUGS================================================
 
                 //debug player position
-                 string positionText = $" Player Position: {_character.Position.X}, {_character.Position.Y}";
+                string positionText = $" Player Position: {_character.Position.X}, {_character.Position.Y}";
                 _spriteBatch.DrawString(_font, positionText, _cameraPosition+new Vector2(0,70), Color.White);
                 //debug camera position
                 string positionCameraText = $" Camera Position: {_cameraPosition.X}, {_cameraPosition.Y}";
@@ -433,7 +430,7 @@ namespace projeto_jogo
                 string isonground = $" Estado da colision: {_character.IsOnGround}";
                 _spriteBatch.DrawString(_font, isonground, _cameraPosition + new Vector2(0, 95), Color.White);
                 //Hitbox do player
-                _spriteBatch.Draw(pixelTexture, _character.BoundingBox, Color.Red * 0.5f);
+                //_spriteBatch.Draw(pixelTexture, _character.BoundingBox, Color.Red * 0.5f);
 
                 // =============================================================================================
 
@@ -448,7 +445,7 @@ namespace projeto_jogo
         private void LaunchProjectile()
         {
             // Create and add a new projectile to the list
-            _projectiles.Add(new Projectile(projectileTexture, _character.Position, new Vector2(500, 0) * playerDirection, 5f));
+            _projectiles.Add(new Projectile(projectileTexture, _character.Position+new Vector2(20,30), new Vector2(500, 0) * playerDirection, 5f));
         }
 
 
@@ -475,18 +472,21 @@ namespace projeto_jogo
 
             // Dá respawn aos inimigos
             RespawnEnemies();
-            foreach (var enemy in _enemies)
-            {
-                enemy.Position = enemy.InitialPosition; // Reset to initial position
-                enemy.Velocity = Vector2.Zero;
-            }
-
+           
             // Reset camera position
             _cameraPosition = Vector2.Zero;
 
         }
 
-        
+        private Texture2D[] LoadAnimationFrames(string basePath, int frameCount)
+        {
+            Texture2D[] frames = new Texture2D[frameCount];
+            for (int i = 0; i < frameCount; i++)
+            {
+                frames[i] = Content.Load<Texture2D>($"{basePath}{i }");
+            }
+            return frames;
+        }
 
     }
 }

@@ -1,30 +1,55 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
-namespace projeto_jogo
+using System.Collections.Generic;
+
+public class Personagem
 {
-    public class Personagem
+    public Vector2 Position { get; set; }
+    public Vector2 Velocity { get; set; }
+    public bool IsOnGround { get; set; }
+
+    private Dictionary<string, Animation> animations;
+    private Animation currentAnimation;
+    private string currentAnimationKey;
+    public bool isFacingRight;
+
+    public Rectangle BoundingBox => new Rectangle((int)Position.X, (int)Position.Y, currentAnimation.GetCurrentFrame().Width, currentAnimation.GetCurrentFrame().Height);
+
+    public Personagem(Dictionary<string, Animation> animations, Vector2 position)
     {
-        public Vector2 Position { get; set; }
-        public Vector2 Velocity { get; set; }
-        public Texture2D Texture { get; set; }
+        this.animations = animations;
+        Position = position;
+        IsOnGround = false;
+        SetAnimation("idle");
+        isFacingRight = true;
+    }
 
-
-
-        
-        public Rectangle BoundingBox => new Rectangle((int)Position.X, (int)Position.Y, Texture.Width, Texture.Height); //le o personagem e devolve os seus limites
-        public bool IsOnGround { get; set; }
-
-        public Personagem(Texture2D texture, Vector2 position)
+    public void SetAnimation(string animationKey)
+    {
+        if (currentAnimationKey != animationKey)
         {
-            Texture = texture;
-            Position = position;
-            IsOnGround = false;
+            currentAnimation = animations[animationKey];
+            currentAnimationKey = animationKey;
         }
+    }
 
+    public void Update(float deltaTime)
+    {
+        currentAnimation.Update(deltaTime); // Update animation frames
+        Position += Velocity * deltaTime;
+
+        // Set default animation if no user input is detected
+        
+    }
+
+    public void Draw(SpriteBatch spriteBatch)
+    {
+        SpriteEffects spriteEffects = isFacingRight ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
+        spriteBatch.Draw(currentAnimation.GetCurrentFrame(), Position, null, Color.White, 0f, Vector2.Zero, 1f, spriteEffects, 0f);
+    }
+
+    public int GetCurrentFrameHeight()
+    {
+        return currentAnimation.GetCurrentFrame().Height;
     }
 }

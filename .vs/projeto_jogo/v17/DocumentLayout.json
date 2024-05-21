@@ -1,21 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\",
+  "WorkspaceRootPath": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\documents\\uni\\2\u00BA semestre\\t\u00E9cnicas de desenvolvimento de videojogos\\anti_tux_git\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tu\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\documents\\uni\\2\u00BA semestre\\t\u00E9cnicas de desenvolvimento de videojogos\\anti_tux_git\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tu\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\documents\\uni\\2\u00BA semestre\\t\u00E9cnicas de desenvolvimento de videojogos\\anti_tux_git\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tu\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tu\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\documents\\uni\\2\u00BA semestre\\t\u00E9cnicas de desenvolvimento de videojogos\\anti_tux_git\\plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tu\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tu\\plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,62 +34,105 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Game1.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Game1.cs",
+              "RelativeDocumentMoniker": "Game1.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Game1.cs*",
+              "RelativeToolTip": "Game1.cs*",
+              "ViewState": "AQIAAJ0BAAAAAAAAAAArwLABAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T18:30:43.259Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "Projectile.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Projectile.cs",
+              "RelativeDocumentMoniker": "Projectile.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Projectile.cs",
+              "RelativeToolTip": "Projectile.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAYwBwAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T19:03:08.166Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Plataform.cs",
-              "DocumentMoniker": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Plataform.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Plataform.cs",
               "RelativeDocumentMoniker": "Plataform.cs",
-              "ToolTip": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Plataform.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Plataform.cs",
               "RelativeToolTip": "Plataform.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAmwBwAAAABAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAqwBwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-17T19:21:11.292Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Enemy.cs",
-              "RelativeDocumentMoniker": "Enemy.cs",
-              "ToolTip": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Enemy.cs*",
-              "RelativeToolTip": "Enemy.cs*",
-              "ViewState": "AQIAABUAAAAAAAAAAAAnwCIAAABQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T19:18:52.538Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Personagem.cs",
-              "DocumentMoniker": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Personagem.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Personagem.cs",
               "RelativeDocumentMoniker": "Personagem.cs",
-              "ToolTip": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Personagem.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Personagem.cs",
               "RelativeToolTip": "Personagem.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAwA4AAAAAAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAArwCMAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-17T17:24:52.739Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Game1.cs",
-              "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "C:\\Users\\Paiva\\Documents\\UNI\\2\u00BA Semestre\\T\u00E9cnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\Game1.cs",
-              "RelativeToolTip": "Game1.cs",
-              "ViewState": "AQIAAGkBAAAAAAAAAAAawH8BAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "Animation.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Animation.cs",
+              "RelativeDocumentMoniker": "Animation.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Animation.cs",
+              "RelativeToolTip": "Animation.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAUwBIAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T18:30:43.259Z",
+              "WhenOpened": "2024-05-21T18:05:10.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Enemy.cs",
+              "RelativeDocumentMoniker": "Enemy.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Enemy.cs",
+              "RelativeToolTip": "Enemy.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAIwBAAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T19:18:52.538Z",
               "EditorCaption": ""
             }
           ]

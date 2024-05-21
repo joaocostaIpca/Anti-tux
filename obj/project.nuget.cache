@@ -1,15 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "6Yf1djaTXSbNcrUDKGnkT4kN5RNwQagwCSF83kzixWWsXCf+vwoXbmJ+hiOTWz5l7zKtlenaG+odg0w0scSrug==",
+  "dgSpecHash": "0m8Op/9jcTQTvPhsHAy2lsvZcb+M0QJhFBPvx4NUWOhYbBQ7Sa+MOirvMaLzEcjr9kEU3T6u9lFDSz9Xep5kBA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Paiva\\Documents\\UNI\\2º Semestre\\Técnicas de Desenvolvimento de Videojogos\\Anti_tux_git\\projeto_jogo.csproj",
+  "projectFilePath": "C:\\Users\\joaop\\Source\\Repos\\Anti-tu\\projeto_jogo.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Paiva\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
-    "C:\\Users\\Paiva\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512",
-    "C:\\Users\\Paiva\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.30\\microsoft.windowsdesktop.app.ref.6.0.30.nupkg.sha512",
-    "C:\\Users\\Paiva\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.30\\microsoft.netcore.app.ref.6.0.30.nupkg.sha512",
-    "C:\\Users\\Paiva\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.30\\microsoft.aspnetcore.app.ref.6.0.30.nupkg.sha512",
-    "C:\\Users\\Paiva\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.30\\microsoft.netcore.app.host.win-x64.6.0.30.nupkg.sha512"
+    "C:\\Users\\joaop\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\joaop\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
   ],
   "logs": []
 }
