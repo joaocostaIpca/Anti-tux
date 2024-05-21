@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Costa/source/repos/Anti-tux/Content/Coin/coin-4.png</SourceFile>
-  <SourceTime>2024-05-16T19:28:19.3040319+01:00</SourceTime>
-  <DestFile>C:/Users/Costa/source/repos/Anti-tux/Content/bin/DesktopGL/Coin/coin-4.xnb</DestFile>
-  <DestTime>2024-05-16T20:22:12.8408006+01:00</DestTime>
+  <SourceFile>C:/Users/Paiva/Downloads/anti-tux/Content/Coin/coin-4.png</SourceFile>
+  <SourceTime>2024-05-21T01:16:21.8705753+01:00</SourceTime>
+  <DestFile>C:/Users/Paiva/Downloads/anti-tux/Content/bin/DesktopGL/Coin/coin-4.xnb</DestFile>
+  <DestTime>2024-05-21T02:51:25.7702926+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T12:44:56+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

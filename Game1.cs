@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace projeto_jogo
@@ -34,15 +35,16 @@ namespace projeto_jogo
         private List<Vector2> _initialEnemyPositions = new List<Vector2>();
         private Vector2 _cameraPosition;
         private float _gravity = 400f;
-        private float enemyFollowRange = 200f; // Adjust the range as needed
+        private float enemyFollowRange = 200f; 
         private float enemySpeed = 100f;
-        private float projectileCooldown = 2f; // Cooldown duration in seconds
+        private float projectileCooldown = 2f; 
         private float timeSinceLastProjectile = 0f;
         private Vector2 playerDirection = Vector2.UnitX;
         private SpriteFont _font;
         private int _collectedCoins;
 
-
+        
+        
 
       
 
@@ -66,6 +68,7 @@ namespace projeto_jogo
             _graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;
             _graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
             _graphics.IsFullScreen = false;
+
         }
 
         protected override void Initialize()
@@ -122,14 +125,33 @@ namespace projeto_jogo
 
 
             //===============================PERSONAGEM=====================
-            PlayerTexture = Content.Load<Texture2D>("Player/Move/run-1");
 
-            _character = new Personagem(PlayerTexture, new Vector2(2400, 550));
+            Globals.Content = Content;
+
+            // Now you can create your Personagem object
+            _character = new Personagem();
+
+ 
+
+            Globals.SpriteBatch = _spriteBatch;
+
+
+
+
+            //carregar textura do personagem
+
+
+
+
+
+
+
+
 
 
             //DEPOIS EDITAR MOVIMENTO PERSONAGEM
 
-           
+
         }
 
 
@@ -206,7 +228,7 @@ namespace projeto_jogo
             }
             bool isOnPlatform = false;
             // Apply gravity
-            if (!_character.IsOnGround)
+            if (!_character.IsOnGround && _character !=null)
             {
                 _character.Velocity = new Vector2(_character.Velocity.X, _character.Velocity.Y + _gravity * deltaTime);
             }
@@ -300,7 +322,7 @@ namespace projeto_jogo
                    
                     {
                        
-                        _character.Position = new Vector2(_character.Position.X, platform.Position.Y - _character.Texture.Height);
+                        //_character.Position = new Vector2(_character.Position.X, platform.Position.Y - _character.Texture.Height);
                         _character.Velocity = new Vector2(_character.Velocity.X, Math.Max(0, _character.Velocity.Y));
 
                         
@@ -355,7 +377,10 @@ namespace projeto_jogo
             // Clamp the camera position to prevent it from moving below y = 0
             _cameraPosition.Y = Math.Min(_character.Position.Y - (_graphics.PreferredBackBufferHeight / 2), 0);
 
-            
+
+            _character.Update();
+
+            base.Update(gameTime);
 
 
         }
@@ -418,6 +443,7 @@ namespace projeto_jogo
                 //Contador coins
                 _spriteBatch.DrawString(_font, "Coins: " + _collectedCoins, _cameraPosition+ new Vector2(0, 20), Color.White);
 
+                _character.Draw();
 
 
 
