@@ -24,8 +24,8 @@ namespace projeto_jogo
             _frameTime = frameTime;
             _frameTimeLeft = _frameTime;
             _frames = framesX;
-            var frameWidth = _texture.Width / framesX;
-            var frameHeight = _texture.Height;
+            var frameWidth = 64/ framesX;
+            var frameHeight = 80;
 
             for (int i = 0; i < _frames; i++)
             {

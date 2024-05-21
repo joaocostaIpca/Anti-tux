@@ -16,7 +16,6 @@ namespace projeto_jogo
 
         //Texturas
         private Texture2D plataformTexture;
-        private Texture2D PlayerTexture;
         private Texture2D enemyTexture;
         private Texture2D pixelTexture;
         private Texture2D[] projectileTexture;
@@ -233,7 +232,7 @@ namespace projeto_jogo
                 _character.Velocity = new Vector2(_character.Velocity.X, _character.Velocity.Y + _gravity * deltaTime);
             }
             // Update character position
-            _character.Position += _character.Velocity * deltaTime;
+            _character._position += _character.Velocity * deltaTime;
 
             
 
@@ -267,7 +266,7 @@ namespace projeto_jogo
                 var enemy = _enemies[i];
 
                 // Update the enemy position
-                enemy.Update(_character.Position, enemyFollowRange, _platforms, _gravity, deltaTime);
+                enemy.Update(_character._position, enemyFollowRange, _platforms, _gravity, deltaTime);
 
                 // Check for collision with the player
                 if (_character.BoundingBox.Intersects(enemy.BoundingBox))
@@ -322,7 +321,7 @@ namespace projeto_jogo
                    
                     {
                        
-                        //_character.Position = new Vector2(_character.Position.X, platform.Position.Y - _character.Texture.Height);
+                        _character._position = new Vector2(_character._position.X, platform.Position.Y - 80);
                         _character.Velocity = new Vector2(_character.Velocity.X, Math.Max(0, _character.Velocity.Y));
 
                         
@@ -355,27 +354,27 @@ namespace projeto_jogo
 
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
-                _character.Position = new Vector2(_character.Position.X - 250 * deltaTime, _character.Position.Y);
+                _character._position = new Vector2(_character._position.X - 250 * deltaTime, _character._position.Y);
                 playerDirection = -Vector2.UnitX;
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
-                _character.Position = new Vector2(_character.Position.X + 250 * deltaTime, _character.Position.Y);
+                _character._position = new Vector2(_character._position.X + 250 * deltaTime, _character._position.Y);
                 playerDirection = Vector2.UnitX;
             }
 
-            if (_character.Position.Y > GraphicsDevice.Viewport.Height)
+            if (_character._position.Y > GraphicsDevice.Viewport.Height)
             {
                 // Reset game state
                 ResetGame();
             }
 
-            _cameraPosition.X = _character.Position.X - (_graphics.PreferredBackBufferWidth / 2);
+            _cameraPosition.X = _character._position.X - (_graphics.PreferredBackBufferWidth / 2);
 
             // Calculate the camera position so that it follows the player upwards but not downwards
             // Clamp the camera position to prevent it from moving below y = 0
-            _cameraPosition.Y = Math.Min(_character.Position.Y - (_graphics.PreferredBackBufferHeight / 2), 0);
+            _cameraPosition.Y = Math.Min(_character._position.Y - (_graphics.PreferredBackBufferHeight / 2), 0);
 
 
             _character.Update();
@@ -443,6 +442,7 @@ namespace projeto_jogo
                 //Contador coins
                 _spriteBatch.DrawString(_font, "Coins: " + _collectedCoins, _cameraPosition+ new Vector2(0, 20), Color.White);
 
+
                 _character.Draw();
 
 
@@ -450,7 +450,7 @@ namespace projeto_jogo
                 // ======================================DEBUGS================================================
 
                 //debug player position
-                 string positionText = $" Player Position: {_character.Position.X}, {_character.Position.Y}";
+                 string positionText = $" Player Position: {_character._position.X}, {_character._position.Y}";
                 _spriteBatch.DrawString(_font, positionText, _cameraPosition+new Vector2(0,70), Color.White);
                 //debug camera position
                 string positionCameraText = $" Camera Position: {_cameraPosition.X}, {_cameraPosition.Y}";
@@ -458,8 +458,14 @@ namespace projeto_jogo
                 //debug checka colision com o ground
                 string isonground = $" Estado da colision: {_character.IsOnGround}";
                 _spriteBatch.DrawString(_font, isonground, _cameraPosition + new Vector2(0, 95), Color.White);
+                //debug para ver se a animação está a ser chamada
+                
+
                 //Hitbox do player
                 _spriteBatch.Draw(pixelTexture, _character.BoundingBox, Color.Red * 0.5f);
+
+
+
 
                 // =============================================================================================
 
@@ -474,7 +480,7 @@ namespace projeto_jogo
         private void LaunchProjectile()
         {
             // Create and add a new projectile to the list
-            _projectiles.Add(new Projectile(projectileTexture, _character.Position, new Vector2(500, 0) * playerDirection, 5f));
+            _projectiles.Add(new Projectile(projectileTexture, _character._position, new Vector2(500, 0) * playerDirection, 5f));
         }
 
 
@@ -495,7 +501,7 @@ namespace projeto_jogo
         {
 
             // Reniciar o personagem
-            _character.Position = new Vector2(2400, 550);
+            _character._position = new Vector2(2400, 550);
             _character.Velocity = Vector2.Zero;
             _character.IsOnGround = false;
 

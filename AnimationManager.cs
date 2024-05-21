@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace projeto_jogo
 {
-    internal class AnimationManager
+    internal class AnimationManager //isto serve para ele saber a animação q usou anteriormente
     {
         private readonly Dictionary<object, Animation> _anims = [];
         private object _lastKey;
