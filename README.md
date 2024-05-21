@@ -1,7 +1,16 @@
-# Jogo Anti Tux
-![Alt text]()
+# Anti Tux :penguin:
+![Alt text](https://raw.githubusercontent.com/joaocostaIpca/Anti-tux/master/Content/Menu/menu_background.png?token=GHSAT0AAAAAACSMWWYLT33KA6DSUYI46P6OZSM3TZQ)
 
-Video jogo desenvolvido em Monogame 
+## Propriedades do Projeto:  
+:heavy_check_mark: Menu  
+:heavy_check_mark: Plataformas  
+:heavy_check_mark: Enimigos com Movimento autónomo  
+:heavy_check_mark: Colisões e físicas   
+:heavy_check_mark: Moedas  
+
+
+
+
 
 
 
