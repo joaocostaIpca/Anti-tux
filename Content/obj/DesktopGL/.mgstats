@@ -1,18 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Jump/jump-0.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Jump/jump-0.xnb","TextureProcessor","Texture2DContent",17995,20565,0,0895957
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Jump/jump-1.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Jump/jump-1.xnb","TextureProcessor","Texture2DContent",18217,20565,0,0023785
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Jump/jump-2.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Jump/jump-2.xnb","TextureProcessor","Texture2DContent",18810,20565,0,0034157
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Jump/jump-3.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Jump/jump-3.xnb","TextureProcessor","Texture2DContent",18680,20565,0,005301
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Jump/jump-4.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Jump/jump-4.xnb","TextureProcessor","Texture2DContent",17969,20565,0,0026172
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Jump/jump-5.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Jump/jump-5.xnb","TextureProcessor","Texture2DContent",17515,20565,0,0025466
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Jump/jump-6.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Jump/jump-6.xnb","TextureProcessor","Texture2DContent",16924,20565,0,0018836
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Jump/jump-7.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Jump/jump-7.xnb","TextureProcessor","Texture2DContent",16905,20565,0,0023822
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Move/run-0.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Move/run-0.xnb","TextureProcessor","Texture2DContent",15974,22485,0,002018
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Move/run-1.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Move/run-1.xnb","TextureProcessor","Texture2DContent",16483,22485,0,0021443
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Move/run-2.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Move/run-2.xnb","TextureProcessor","Texture2DContent",17149,22485,0,0028025
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Move/run-3.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Move/run-3.xnb","TextureProcessor","Texture2DContent",16859,22485,0,0016901
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Move/run-4.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Move/run-4.xnb","TextureProcessor","Texture2DContent",15049,22485,0,0018245
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Move/run-5.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Move/run-5.xnb","TextureProcessor","Texture2DContent",17066,22485,0,0023221
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Move/run-6.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Move/run-6.xnb","TextureProcessor","Texture2DContent",18005,22485,0,0025593
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Move/run-7.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Move/run-7.xnb","TextureProcessor","Texture2DContent",17271,22485,0,0029647
-"C:/Users/Paiva/Downloads/antitux-3/Content/Player/Move/run-8.png","C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Player/Move/run-8.xnb","TextureProcessor","Texture2DContent",15339,22485,0,0020111
+"C:/Users/joaop/source/repos/Anti-tux/Content/Sons/music.mp3","C:/Users/joaop/source/repos/Anti-tux/Content/bin/DesktopGL/Sons/music.xnb","SongProcessor","SongContent",68589,123,0,3599298

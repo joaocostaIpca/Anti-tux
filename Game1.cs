@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Xna.Framework.Media;
 
 namespace projeto_jogo
 {
@@ -12,6 +13,7 @@ namespace projeto_jogo
 
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private Song backgroundMusic;
 
         //Texturas
         private Texture2D plataformTexture;
@@ -19,7 +21,7 @@ namespace projeto_jogo
         private Texture2D _backgroundTexture;
         private Texture2D pixelTexture;
         private Texture2D[] projectileTexture;
-        private Texture2D[] lavaFrames;
+       
         
 
 
@@ -30,9 +32,8 @@ namespace projeto_jogo
         private Menu _menu;
         private List<Enemy> _enemies;
         private List<Projectile> _projectiles = new List<Projectile>();
-        private int currentLavaFrame;
-        private float lavaFrameTimer;
         private List<Coin> _coins;
+        private Animation lavaAnimation;
 
         //Variaveis do jogo
         private List<Vector2> _initialEnemyPositions = new List<Vector2>();
@@ -46,10 +47,11 @@ namespace projeto_jogo
         private Vector2 playerDirection = Vector2.UnitX;
         private SpriteFont _font;
         private int _collectedCoins;
+        private float volumeLevel;
 
 
 
-      
+
 
 
         //Estado do jogo
@@ -76,7 +78,9 @@ namespace projeto_jogo
         protected override void Initialize()
 
         {
+            volumeLevel = 0.5f;
             base.Initialize();
+
         }
 
         //===============================CONTENT===========================
@@ -88,17 +92,15 @@ namespace projeto_jogo
             _backgroundTexture = Content.Load<Texture2D>("Background/background5");
 
 
-            // Load lava animation frames
-            lavaFrames = new Texture2D[14]; // numberOfFrames is the total number of frames in the lava animation
-            for (int i = 1; i < 14; i++)
-            {
-                lavaFrames[i] = Content.Load<Texture2D>("Background/Lava/lava-" + i); // Adjust the naming convention as per your files
-            }
+            //===============================MUSICA===========================
 
-            // Initialize variables for lava animation
-            currentLavaFrame = 0;
-            lavaFrameTimer = 0f;
 
+            backgroundMusic = Content.Load<Song>("Sons/music"); 
+
+            //Musica em loop
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume = volumeLevel;
+            MediaPlayer.Play(backgroundMusic);
 
 
             //===============================MENU===========================
@@ -156,26 +158,16 @@ namespace projeto_jogo
             _character = new Personagem(animations, new Vector2(2400, 500));
 
 
-            
+          //===============================LAVA=====================
+
+            var lavaFrames = LoadAnimationFrames("Background/Lava/lava-", 14);
+
+            lavaAnimation = new Animation(lavaFrames, 0.1f);
 
         }
         //===============================UPDATE=====================
 
-        private void UpdateLavaAnimation(float deltaTime)
-        {
-            float frameDuration = 6f; // Adjust the duration as needed for the animation speed
-
-            // Update time since last frame
-            timeSinceLastFrame += deltaTime;
-
-                timeSinceLastFrame += deltaTime;
-                if (timeSinceLastFrame >= frameDuration)
-                {
-                    currentLavaFrame = (currentLavaFrame + 1) % lavaFrames.Length;
-                    timeSinceLastFrame = 0;
-                }
-            
-        }
+        
 
 
 
@@ -258,20 +250,6 @@ namespace projeto_jogo
             }
 
 
-            // Calculate the total elapsed time since the game started
-            float totalElapsedSeconds = (float)gameTime.TotalGameTime.TotalSeconds;
-
-            // Calculate the current frame index based on the elapsed time and frame duration
-            float frameDuration = 0.1f; // Adjust the duration as needed for the animation speed
-            float totalAnimationDuration = frameDuration * lavaFrames.Length;
-            float normalizedTime = totalElapsedSeconds % totalAnimationDuration;
-            currentLavaFrame = (int)(normalizedTime / frameDuration);
-
-            // Ensure the current frame index stays within the range of available frames
-            currentLavaFrame %= lavaFrames.Length;
-
-
-
             for (int i = _enemies.Count - 1; i >= 0; i--)
             {
                 var enemy = _enemies[i];
@@ -293,7 +271,19 @@ namespace projeto_jogo
             }
 
 
-            UpdateLavaAnimation(deltaTime);
+
+
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Up))
+            {
+                AdjustVolume(0.01f); // aumenta o volume
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.Down))
+            {
+                AdjustVolume(-0.01f); // diminui o volume
+            }
+
+
 
 
             //Gere as moedas
@@ -396,6 +386,7 @@ namespace projeto_jogo
             _cameraPosition.Y = Math.Min(_character.Position.Y - (_graphics.PreferredBackBufferHeight / 2), 0);
 
             
+            lavaAnimation.Update(deltaTime);
 
 
         }
@@ -440,24 +431,18 @@ namespace projeto_jogo
                     _spriteBatch.Draw(_backgroundTexture, position, null, Color.White, 0f, Vector2.Zero, new Vector2(1f, scaleY), SpriteEffects.None, 0f);
                 }
 
-
-                //DRAW LAVA
-
                 
+                int tileWidth = lavaAnimation.GetCurrentFrame().Width;
+                int numberOfTiles = _graphics.PreferredBackBufferWidth / tileWidth + 2;
 
-                if (lavaFrames[currentLavaFrame] != null)
+                //Desenha a lava consoante o numero de tiles
+                for (int i = 0; i < numberOfTiles; i++)
                 {
-                    int lavaWidth = lavaFrames[currentLavaFrame].Width;
-                    int lavaHeight = lavaFrames[currentLavaFrame].Height;
-
-                    int _numRepetitionsX = (int)Math.Ceiling((float)screenWidth / lavaWidth);
-
-                    for (int i = 0; i < _numRepetitionsX; i++)
-                    {
-                        Vector2 position = new Vector2(i * lavaWidth, screenHeight - lavaHeight - 25) + _cameraPosition;
-                        _spriteBatch.Draw(lavaFrames[currentLavaFrame], position, Color.White);
-                    }
+                    var lavaPosition = new Vector2(_character.Position.X - (screenWidth / 2) + (i * tileWidth), 1010);
+                    _spriteBatch.Draw(lavaAnimation.GetCurrentFrame(), lavaPosition, Color.White);
                 }
+
+
 
 
 
@@ -497,7 +482,9 @@ namespace projeto_jogo
                 {
                     coin.Draw(_spriteBatch);
                 }
-
+                //volume da musica
+                
+                _spriteBatch.DrawString(_font, $"Volume: {volumeLevel * 100}%",_cameraPosition+ new Vector2(0, 40), Color.White);
 
                 //Contador coins
                 _spriteBatch.DrawString(_font, "Coins: " + _collectedCoins, _cameraPosition+ new Vector2(0, 20), Color.White);
@@ -507,15 +494,16 @@ namespace projeto_jogo
 
                 // ======================================DEBUGS================================================
 
+
                 //debug player position
                 string positionText = $" Player Position: {_character.Position.X}, {_character.Position.Y}";
-                _spriteBatch.DrawString(_font, positionText, _cameraPosition+new Vector2(0,70), Color.White);
+                _spriteBatch.DrawString(_font, positionText, _cameraPosition+new Vector2(0,80), Color.White);
                 //debug camera position
                 string positionCameraText = $" Camera Position: {_cameraPosition.X}, {_cameraPosition.Y}";
-                _spriteBatch.DrawString(_font, positionCameraText, _cameraPosition+new Vector2(0,45), Color.White);
+                _spriteBatch.DrawString(_font, positionCameraText, _cameraPosition+new Vector2(0,60), Color.White);
                 //debug checka colision com o ground
                 string isonground = $" Estado da colision: {_character.IsOnGround}";
-                _spriteBatch.DrawString(_font, isonground, _cameraPosition + new Vector2(0, 95), Color.White);
+                _spriteBatch.DrawString(_font, isonground, _cameraPosition + new Vector2(0, 100), Color.White);
                 //Hitbox do player
                 //_spriteBatch.Draw(pixelTexture, _character.BoundingBox, Color.Red * 0.5f);
 
@@ -573,6 +561,13 @@ namespace projeto_jogo
                 frames[i] = Content.Load<Texture2D>($"{basePath}{i }");
             }
             return frames;
+        }
+
+
+        private void AdjustVolume(float adjustment)
+        {
+            volumeLevel = MathHelper.Clamp(volumeLevel + adjustment, 0.0f, 1.0f);
+            MediaPlayer.Volume = volumeLevel;
         }
 
     }

@@ -25,6 +25,18 @@
 /processorParam:TextureFormat=Color
 /build:Background/background5.png
 
+#begin Background/Lava/lava-0.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Background/Lava/lava-0.png
+
 #begin Background/Lava/lava-1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -84,18 +96,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Background/Lava/lava-13.png
-
-#begin Background/Lava/lava-14.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Background/Lava/lava-14.png
 
 #begin Background/Lava/lava-2.png
 /importer:TextureImporter
@@ -476,18 +476,6 @@
 /processorParam:TextureFormat=Color
 /build:Player/Idle/stand-0.png
 
-#begin Player/Idle/stand-0.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Player/Idle/stand-0.png
-
 #begin Player/Idle/stand-1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -499,30 +487,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Player/Idle/stand-1.png
-
-#begin Player/Idle/stand-1.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Player/Idle/stand-1.png
-
-#begin Player/Idle/stand-2.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Player/Idle/stand-2.png
 
 #begin Player/Idle/stand-2.png
 /importer:TextureImporter
@@ -548,18 +512,6 @@
 /processorParam:TextureFormat=Color
 /build:Player/Idle/stand-3.png
 
-#begin Player/Idle/stand-3.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Player/Idle/stand-3.png
-
 #begin Player/Idle/stand-4.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -571,30 +523,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Player/Idle/stand-4.png
-
-#begin Player/Idle/stand-4.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Player/Idle/stand-4.png
-
-#begin Player/Idle/stand-5.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Player/Idle/stand-5.png
 
 #begin Player/Idle/stand-5.png
 /importer:TextureImporter
@@ -620,18 +548,6 @@
 /processorParam:TextureFormat=Color
 /build:Player/Idle/stand-6.png
 
-#begin Player/Idle/stand-6.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Player/Idle/stand-6.png
-
 #begin Player/Idle/stand-7.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -643,30 +559,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Player/Idle/stand-7.png
-
-#begin Player/Idle/stand-7.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Player/Idle/stand-7.png
-
-#begin Player/Idle/stand-8.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Player/Idle/stand-8.png
 
 #begin Player/Idle/stand-8.png
 /importer:TextureImporter
@@ -931,4 +823,10 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Projectile/fire_bullet-3.png
+
+#begin Sons/music.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Sons/music.mp3
 
