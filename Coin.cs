@@ -55,6 +55,9 @@ namespace projeto_jogo
             {
                 new Coin(frames, new Vector2(2650, 550)),
                 new Coin(frames, new Vector2(4200, 430))
+                new Coin(frames, new Vector2(3250, 550))
+                new Coin(frames, new Vector2(6000, 430))
+                new Coin(frames, new Vector2(7000, 430))
             };
 
             return coins;

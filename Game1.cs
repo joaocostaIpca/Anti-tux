@@ -141,7 +141,8 @@ namespace projeto_jogo
             _platforms.Add(new Plataform(plataformTexture, new Vector2(3200, 600)));
             _platforms.Add(new Plataform(plataformTexture, new Vector2(4000, 470)));
             _platforms.Add(new Plataform(plataformTexture, new Vector2(4950, 550)));
-
+            _platforms.Add(new Plataform(plataformTexture, new Vector2(5750, 600)));
+            _platforms.Add(new Plataform(plataformTexture, new Vector2(6600, 650)));
 
 
             //===============================PERSONAGEM=====================
