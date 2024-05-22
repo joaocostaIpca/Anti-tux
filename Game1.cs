@@ -21,7 +21,7 @@ namespace projeto_jogo
         private Texture2D _backgroundTexture;
         private Texture2D pixelTexture;
         private Texture2D[] projectileTexture;
-       
+       private Texture2D _menuBackground;
         
 
 
@@ -48,6 +48,7 @@ namespace projeto_jogo
         private SpriteFont _font;
         private int _collectedCoins;
         private float volumeLevel;
+        private int enemykill=0;
 
 
 
@@ -59,7 +60,8 @@ namespace projeto_jogo
         {
             Menu,
             Playing,
-            GameOver
+            GameOver,
+            Win
         }
 
         private GameState _gameState = GameState.Menu;
@@ -93,7 +95,7 @@ namespace projeto_jogo
 
 
             //===============================MUSICA===========================
-
+            _menuBackground = Content.Load<Texture2D>("Menu/You_win_");
 
             backgroundMusic = Content.Load<Song>("Sons/music"); 
 
@@ -133,7 +135,7 @@ namespace projeto_jogo
 
             //===============================PLATAFORMA=====================
 
-            plataformTexture = Content.Load<Texture2D>("platform_texture");
+            plataformTexture = Content.Load<Texture2D>("plataforma");
 
             //Criar plataformas e adicionar a lista
             _platforms = new List<Plataform>();
@@ -209,6 +211,15 @@ namespace projeto_jogo
         private void UpdateGame(float deltaTime, GameTime gameTime)
 
         {
+
+            if (_collectedCoins == 6)
+            {
+                ResetGame();
+                _gameState = GameState.Win;
+
+            }
+
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
             {
                 // Se a tecla Esc for pressionada, volta para o menu ( este reset tem de ficar porque se nao o menu fica na posição onde o personagem estava)
@@ -246,6 +257,7 @@ namespace projeto_jogo
                         // Remove the projectile and the enemy
                         _projectiles.Remove(projectile);
                         _enemies.Remove(enemy);
+                        enemykill++;
                     }
                 }
             }
@@ -489,7 +501,7 @@ namespace projeto_jogo
 
                 //Contador coins
                 _spriteBatch.DrawString(_font, "Coins: " + _collectedCoins, _cameraPosition+ new Vector2(0, 20), Color.White);
-
+                _spriteBatch.DrawString(_font, "Inimigos Mortos: " + enemykill, _cameraPosition + new Vector2(1700, 20), Color.White);
                 _character.Draw(_spriteBatch);
 
 
@@ -510,6 +522,16 @@ namespace projeto_jogo
 
                 // =============================================================================================
 
+            }
+            else if(_gameState == GameState.Win)
+            {
+                _spriteBatch.Draw(_menuBackground, new Rectangle(0, 0, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width, GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height), Color.White);
+
+            }
+
+
+            {
+               
             }
 
             _spriteBatch.End();
@@ -545,7 +567,7 @@ namespace projeto_jogo
             _character.Position = new Vector2(2400, 550);
             _character.Velocity = Vector2.Zero;
             _character.IsOnGround = false;
-
+            enemykill = 0;
             // Dá respawn aos inimigos
             RespawnEnemies();
            

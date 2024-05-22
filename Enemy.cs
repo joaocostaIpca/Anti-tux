@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
-
 namespace projeto_jogo
 {
     public class Enemy
@@ -18,6 +17,7 @@ namespace projeto_jogo
         public Vector2 Velocity { get; set; }
         private int hitboxWidth = 20;
         private int hitboxHeight = 65;
+        bool isOnPlatform = false;
         public Rectangle BoundingBox => new Rectangle((int)(Position.X + (Texture.Width - hitboxWidth) / 2), (int)(Position.Y + (Texture.Height - hitboxHeight)), hitboxWidth, hitboxHeight);
 
 
@@ -53,33 +53,47 @@ namespace projeto_jogo
             }
             else
             {
-                Velocity = new Vector2(0, Velocity.Y ); // Stop horizontal movement if out of range
+                Velocity = new Vector2(0,0 ); // Stop horizontal movement if out of range
             }
 
             // Update position based on velocity
             Position += Velocity*deltatime;
 
             // Check for collisions with platforms
-            bool isOnPlatform = false;
+            
             foreach (var platform in platforms)
             {
                 if (BoundingBox.Intersects(platform.BoundingBox) && BoundingBox.Bottom >= platform.BoundingBox.Top)
 
                 {
+                    Vector2 position = Position;
+                    Vector2 velocity = Velocity;
                     // Adjust player position to prevent clipping into the platform
-                    Position = new Vector2(Position.X, platform.Position.Y - Texture.Height);
-                   Velocity = new Vector2(Velocity.X, Math.Max(0, Velocity.Y)); // Prevent downward velocity
+                    position.Y = platform.Position.Y - Texture.Height;
+                    velocity.Y = Math.Max(0, Velocity.Y); // Prevent downward velocity
 
+                    Position = position;
+                    Velocity = velocity;
                     // Update player's on-ground status
                     isOnPlatform = true;
                     break; // Stop checking further platforms as the character is already on one
                 }
+                else
+                {
+                    isOnPlatform = false;
+                }
+                
             }
 
             // If not on any platform, continue falling
             if (!isOnPlatform)
             {
-                Velocity = new Vector2(Velocity.X, Velocity.Y + gravity*deltatime);
+               
+                Vector2 velocity= Velocity;
+                velocity.X = 0;
+
+                // Apply gravity
+                velocity.Y += gravity * deltatime;
             }
         }
 
@@ -95,9 +109,18 @@ namespace projeto_jogo
             var enemies = new List<Enemy>
             {
                 new Enemy(enemyTexture, new Vector2(2600, 500), enemySpeed),
-                new Enemy(enemyTexture, new Vector2(3300, 500), enemySpeed)
+                new Enemy(enemyTexture, new Vector2(3300, 500), enemySpeed),
+                new Enemy(enemyTexture, new Vector2(4100, 500), enemySpeed),
+                new Enemy(enemyTexture, new Vector2(5000, 500), enemySpeed),
+                 new Enemy(enemyTexture, new Vector2(5800, 550), enemySpeed),
+                  new Enemy(enemyTexture, new Vector2(6720, 600), enemySpeed)
+
+
             };
 
+
+
+        
             var initialPositions = new List<Vector2>();
             foreach (var enemy in enemies)
             {

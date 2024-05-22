@@ -1,33 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\",
+  "WorkspaceRootPath": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux1\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux1\\menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux1\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux\\plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux1\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux1\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux1\\plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux1\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tux1\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -38,19 +42,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Game1.cs",
-              "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Game1.cs",
-              "RelativeToolTip": "Game1.cs",
-              "ViewState": "AQIAANsBAAAAAAAAAAAAAOUBAAAQAAAA",
+              "DocumentIndex": 1,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Menu.cs",
+              "RelativeDocumentMoniker": "Menu.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Menu.cs",
+              "RelativeToolTip": "Menu.cs",
+              "ViewState": "AQIAADEAAAAAAAAAAAA8wDQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T18:30:43.259Z",
+              "WhenOpened": "2024-05-22T11:11:42.81Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -76,72 +80,88 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Enemy.cs",
+              "RelativeDocumentMoniker": "Enemy.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Enemy.cs",
+              "RelativeToolTip": "Enemy.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAA9wDcAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T10:53:06.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Game1.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Game1.cs",
+              "RelativeDocumentMoniker": "Game1.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Game1.cs*",
+              "RelativeToolTip": "Game1.cs*",
+              "ViewState": "AQIAAFoAAAAAAAAAAAAqwGEAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-22T10:44:04.787Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Coin.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Coin.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Coin.cs",
               "RelativeDocumentMoniker": "Coin.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Coin.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Coin.cs",
               "RelativeToolTip": "Coin.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAowB4AAAArAAAA",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAYwDkAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-22T00:28:53.9Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Personagem.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Personagem.cs",
-              "RelativeDocumentMoniker": "Personagem.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Personagem.cs",
-              "RelativeToolTip": "Personagem.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAArwCMAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T17:24:52.739Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Animation.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Animation.cs",
-              "RelativeDocumentMoniker": "Animation.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Animation.cs",
-              "RelativeToolTip": "Animation.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T18:05:10.001Z",
+              "WhenOpened": "2024-05-22T00:28:53.9Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Enemy.cs",
-              "RelativeDocumentMoniker": "Enemy.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Enemy.cs",
-              "RelativeToolTip": "Enemy.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAASAAAA",
+              "Title": "Personagem.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Personagem.cs",
+              "RelativeDocumentMoniker": "Personagem.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Personagem.cs",
+              "RelativeToolTip": "Personagem.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAA9wA8AAACnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T19:18:52.538Z"
+              "WhenOpened": "2024-05-17T17:24:52.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Animation.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Animation.cs",
+              "RelativeDocumentMoniker": "Animation.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Animation.cs",
+              "RelativeToolTip": "Animation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T18:05:10.001Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Plataform.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Plataform.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Plataform.cs",
               "RelativeDocumentMoniker": "Plataform.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Plataform.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Plataform.cs",
               "RelativeToolTip": "Plataform.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA6wBwAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T19:21:11.292Z"
+              "WhenOpened": "2024-05-17T19:21:11.292Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Projectile.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Projectile.cs",
+              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Projectile.cs",
               "RelativeDocumentMoniker": "Projectile.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux\\Projectile.cs",
+              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tux1\\Projectile.cs",
               "RelativeToolTip": "Projectile.cs",
               "ViewState": "AQIAAA8AAAAAAAAAAAAYwBwAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

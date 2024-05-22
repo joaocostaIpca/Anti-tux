@@ -108,11 +108,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaop\\Source\\Repos\\Anti-tux\\projeto_jogo.csproj",
+      "projectUniqueName": "C:\\Users\\joaop\\Source\\Repos\\Anti-tux1\\projeto_jogo.csproj",
       "projectName": "projeto_jogo",
-      "projectPath": "C:\\Users\\joaop\\Source\\Repos\\Anti-tux\\projeto_jogo.csproj",
+      "projectPath": "C:\\Users\\joaop\\Source\\Repos\\Anti-tux1\\projeto_jogo.csproj",
       "packagesPath": "C:\\Users\\joaop\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joaop\\Source\\Repos\\Anti-tux\\obj\\",
+      "outputPath": "C:\\Users\\joaop\\Source\\Repos\\Anti-tux1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
