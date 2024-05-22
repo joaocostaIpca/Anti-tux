@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/joaop/Source/Repos/Anti-tu/Content/Player/Move/run-6.png</SourceFile>
-  <SourceTime>2024-05-21T18:52:23.8815312+01:00</SourceTime>
-  <DestFile>C:/Users/joaop/Source/Repos/Anti-tu/Content/bin/DesktopGL/Content/Player/Move/run-6.xnb</DestFile>
-  <DestTime>2024-05-21T18:53:41.0828928+01:00</DestTime>
+  <SourceFile>C:/Users/Paiva/Downloads/antitux-3/Content/Player/Move/run-6.png</SourceFile>
+  <SourceTime>2024-05-21T02:01:25.6978695+01:00</SourceTime>
+  <DestFile>C:/Users/Paiva/Downloads/antitux-3/Content/bin/DesktopGL/Content/Player/Move/run-6.xnb</DestFile>
+  <DestTime>2024-05-22T02:00:37.6872872+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T12:44:56+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

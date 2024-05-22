@@ -16,8 +16,11 @@ namespace projeto_jogo
         //Texturas
         private Texture2D plataformTexture;
         private Texture2D enemyTexture;
+        private Texture2D _backgroundTexture;
         private Texture2D pixelTexture;
         private Texture2D[] projectileTexture;
+        private Texture2D[] lavaFrames;
+        
 
 
 
@@ -27,12 +30,15 @@ namespace projeto_jogo
         private Menu _menu;
         private List<Enemy> _enemies;
         private List<Projectile> _projectiles = new List<Projectile>();
+        private int currentLavaFrame;
+        private float lavaFrameTimer;
         private List<Coin> _coins;
 
         //Variaveis do jogo
         private List<Vector2> _initialEnemyPositions = new List<Vector2>();
         private Vector2 _cameraPosition;
         private float _gravity = 500f;
+        private float timeSinceLastFrame = 0f;
         private float enemyFollowRange = 200f; // Adjust the range as needed
         private float enemySpeed = 100f;
         private float projectileCooldown = 2f; // Cooldown duration in seconds
@@ -78,6 +84,22 @@ namespace projeto_jogo
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            //===============================BACKGROUND=====================
+            _backgroundTexture = Content.Load<Texture2D>("Background/background5");
+
+
+            // Load lava animation frames
+            lavaFrames = new Texture2D[14]; // numberOfFrames is the total number of frames in the lava animation
+            for (int i = 1; i < 14; i++)
+            {
+                lavaFrames[i] = Content.Load<Texture2D>("Background/Lava/lava-" + i); // Adjust the naming convention as per your files
+            }
+
+            // Initialize variables for lava animation
+            currentLavaFrame = 0;
+            lavaFrameTimer = 0f;
+
+
 
             //===============================MENU===========================
             _font = Content.Load<SpriteFont>("Menu/Font_menu"); //fonte do debug !
@@ -121,8 +143,8 @@ namespace projeto_jogo
 
 
             //===============================PERSONAGEM=====================
-            var idleAnimation = new Animation(LoadAnimationFrames("Player/Idle/idle-", 12), 0.2f);
-            var runAnimation = new Animation(LoadAnimationFrames("Player/Move/run-", 8), 0.1f);
+            var idleAnimation = new Animation(LoadAnimationFrames("Player/Idle/stand-", 9), 0.2f);
+            var runAnimation = new Animation(LoadAnimationFrames("Player/Move/run-", 9), 0.1f);
             var jumpAnimation = new Animation(LoadAnimationFrames("Player/Jump/jump-", 8), 0.4f);
 
             var animations = new Dictionary<string, Animation>
@@ -132,27 +154,31 @@ namespace projeto_jogo
                 { "jump", jumpAnimation }
             };
             _character = new Personagem(animations, new Vector2(2400, 500));
-           
 
 
-            //DEPOIS EDITAR MOVIMENTO PERSONAGEM
+            
 
-           
+        }
+        //===============================UPDATE=====================
+
+        private void UpdateLavaAnimation(float deltaTime)
+        {
+            float frameDuration = 6f; // Adjust the duration as needed for the animation speed
+
+            // Update time since last frame
+            timeSinceLastFrame += deltaTime;
+
+                timeSinceLastFrame += deltaTime;
+                if (timeSinceLastFrame >= frameDuration)
+                {
+                    currentLavaFrame = (currentLavaFrame + 1) % lavaFrames.Length;
+                    timeSinceLastFrame = 0;
+                }
+            
         }
 
 
 
-
-
-
-
-
-
-
-
-
-
-        //===============================UPDATE=====================
 
         protected override void Update(GameTime gameTime)
         {
@@ -232,6 +258,19 @@ namespace projeto_jogo
             }
 
 
+            // Calculate the total elapsed time since the game started
+            float totalElapsedSeconds = (float)gameTime.TotalGameTime.TotalSeconds;
+
+            // Calculate the current frame index based on the elapsed time and frame duration
+            float frameDuration = 0.1f; // Adjust the duration as needed for the animation speed
+            float totalAnimationDuration = frameDuration * lavaFrames.Length;
+            float normalizedTime = totalElapsedSeconds % totalAnimationDuration;
+            currentLavaFrame = (int)(normalizedTime / frameDuration);
+
+            // Ensure the current frame index stays within the range of available frames
+            currentLavaFrame %= lavaFrames.Length;
+
+
 
             for (int i = _enemies.Count - 1; i >= 0; i--)
             {
@@ -254,7 +293,7 @@ namespace projeto_jogo
             }
 
 
-
+            UpdateLavaAnimation(deltaTime);
 
 
             //Gere as moedas
@@ -318,7 +357,11 @@ namespace projeto_jogo
                 _character.Velocity = new Vector2(_character.Velocity.X, -300);
                 _character.SetAnimation("jump");
             }
-
+            if (Keyboard.GetState().IsKeyDown(Keys.Space) && _character.IsOnGround )
+            {
+                _character.Velocity = new Vector2(_character.Velocity.X, -300);
+                _character.SetAnimation("jump");
+            }
 
             else if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
@@ -374,6 +417,50 @@ namespace projeto_jogo
             }
             else if (_gameState == GameState.Playing)
             {
+
+                int bgWidth = _backgroundTexture.Width;
+                int bgHeight = _backgroundTexture.Height;
+
+                int screenWidth = GraphicsDevice.Viewport.Width;
+                int screenHeight = GraphicsDevice.Viewport.Height;
+
+                // Calculate the number of repetitions needed to cover the entire screen horizontally
+                int numRepetitionsX = (int)Math.Ceiling((float)screenWidth / bgWidth);
+
+                // Calculate the scale factor for stretching the background texture vertically
+                float scaleY = (float)screenHeight / bgHeight;
+
+                // Draw the background texture repeatedly to cover the entire screen horizontally
+                for (int i = 0; i < numRepetitionsX; i++)
+                {
+                    // Calculate the position to draw each repetition of the background texture
+                    Vector2 position = new Vector2(i * bgWidth, 0) + _cameraPosition;
+
+                    // Draw the background texture with the appropriate scale and position
+                    _spriteBatch.Draw(_backgroundTexture, position, null, Color.White, 0f, Vector2.Zero, new Vector2(1f, scaleY), SpriteEffects.None, 0f);
+                }
+
+
+                //DRAW LAVA
+
+                
+
+                if (lavaFrames[currentLavaFrame] != null)
+                {
+                    int lavaWidth = lavaFrames[currentLavaFrame].Width;
+                    int lavaHeight = lavaFrames[currentLavaFrame].Height;
+
+                    int _numRepetitionsX = (int)Math.Ceiling((float)screenWidth / lavaWidth);
+
+                    for (int i = 0; i < _numRepetitionsX; i++)
+                    {
+                        Vector2 position = new Vector2(i * lavaWidth, screenHeight - lavaHeight - 25) + _cameraPosition;
+                        _spriteBatch.Draw(lavaFrames[currentLavaFrame], position, Color.White);
+                    }
+                }
+
+
+
 
 
 

@@ -102,23 +102,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joaop\\.nuget\\packages\\": {},
+    "C:\\Users\\Paiva\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joaop\\Source\\Repos\\Anti-tu\\projeto_jogo.csproj",
+      "projectUniqueName": "C:\\Users\\Paiva\\Downloads\\antitux-3\\projeto_jogo.csproj",
       "projectName": "projeto_jogo",
-      "projectPath": "C:\\Users\\joaop\\Source\\Repos\\Anti-tu\\projeto_jogo.csproj",
-      "packagesPath": "C:\\Users\\joaop\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joaop\\Source\\Repos\\Anti-tu\\obj\\",
+      "projectPath": "C:\\Users\\Paiva\\Downloads\\antitux-3\\projeto_jogo.csproj",
+      "packagesPath": "C:\\Users\\Paiva\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Paiva\\Downloads\\antitux-3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\joaop\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Paiva\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -127,6 +127,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -175,7 +176,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }

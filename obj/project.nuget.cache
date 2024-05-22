@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "0m8Op/9jcTQTvPhsHAy2lsvZcb+M0QJhFBPvx4NUWOhYbBQ7Sa+MOirvMaLzEcjr9kEU3T6u9lFDSz9Xep5kBA==",
+  "dgSpecHash": "eS+q9CEXHZpPXysFvvs6UzKlsIV7eJFz/LErGznjiB3R2bxjYEUw8Vjpmb8BeUNkB79Jrz4a9jQlq00DVcQPBQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\joaop\\Source\\Repos\\Anti-tu\\projeto_jogo.csproj",
+  "projectFilePath": "C:\\Users\\Paiva\\Downloads\\antitux-3\\projeto_jogo.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\joaop\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
-    "C:\\Users\\joaop\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+    "C:\\Users\\Paiva\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\Paiva\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
   ],
   "logs": []
 }

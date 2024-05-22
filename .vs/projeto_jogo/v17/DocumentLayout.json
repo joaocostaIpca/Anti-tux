@@ -1,30 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\",
+  "WorkspaceRootPath": "C:\\Users\\Paiva\\Downloads\\antitux-3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tu\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\downloads\\antitux-3\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tu\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tu\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tu\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\downloads\\antitux-3\\personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:personagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tu\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\downloads\\antitux-3\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\downloads\\antitux-3\\animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:animation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\joaop\\source\\repos\\anti-tu\\plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\downloads\\antitux-3\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\downloads\\antitux-3\\plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:plataform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|c:\\users\\paiva\\downloads\\antitux-3\\projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2D4F7320-FCCF-47C2-938C-AFDAB3B9809D}|projeto_jogo.csproj|solutionrelative:projectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,11 +44,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Game1.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Game1.cs",
+              "DocumentMoniker": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Game1.cs",
               "RelativeDocumentMoniker": "Game1.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Game1.cs*",
+              "ToolTip": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Game1.cs*",
               "RelativeToolTip": "Game1.cs*",
-              "ViewState": "AQIAAJ0BAAAAAAAAAAArwLABAAASAAAA",
+              "ViewState": "AQIAAEsBAAAAAAAAAAAIwGgBAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-16T18:30:43.259Z",
               "IsPinned": true,
@@ -73,36 +77,23 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Projectile.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Projectile.cs",
-              "RelativeDocumentMoniker": "Projectile.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Projectile.cs",
-              "RelativeToolTip": "Projectile.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAYwBwAAAAXAAAA",
+              "Title": "Coin.cs",
+              "DocumentMoniker": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Coin.cs",
+              "RelativeDocumentMoniker": "Coin.cs",
+              "ToolTip": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Coin.cs",
+              "RelativeToolTip": "Coin.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAowB4AAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T19:03:08.166Z",
+              "WhenOpened": "2024-05-22T00:28:53.9Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Plataform.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Plataform.cs",
-              "RelativeDocumentMoniker": "Plataform.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Plataform.cs",
-              "RelativeToolTip": "Plataform.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAqwBwAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T19:21:11.292Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Personagem.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Personagem.cs",
+              "DocumentMoniker": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Personagem.cs",
               "RelativeDocumentMoniker": "Personagem.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Personagem.cs",
+              "ToolTip": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Personagem.cs",
               "RelativeToolTip": "Personagem.cs",
               "ViewState": "AQIAABYAAAAAAAAAAAArwCMAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -111,11 +102,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Animation.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Animation.cs",
+              "DocumentMoniker": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Animation.cs",
               "RelativeDocumentMoniker": "Animation.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Animation.cs",
+              "ToolTip": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Animation.cs",
               "RelativeToolTip": "Animation.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAUwBIAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -124,16 +115,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "Enemy.cs",
-              "DocumentMoniker": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Enemy.cs",
+              "DocumentMoniker": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Enemy.cs",
               "RelativeDocumentMoniker": "Enemy.cs",
-              "ToolTip": "C:\\Users\\joaop\\source\\repos\\Anti-tu\\Enemy.cs",
+              "ToolTip": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Enemy.cs",
               "RelativeToolTip": "Enemy.cs",
-              "ViewState": "AQIAAFcAAAAAAAAAAAAIwBAAAAAoAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-17T19:18:52.538Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Plataform.cs",
+              "DocumentMoniker": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Plataform.cs",
+              "RelativeDocumentMoniker": "Plataform.cs",
+              "ToolTip": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Plataform.cs",
+              "RelativeToolTip": "Plataform.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA6wBwAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-17T19:21:11.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Projectile.cs",
+              "DocumentMoniker": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Projectile.cs",
+              "RelativeDocumentMoniker": "Projectile.cs",
+              "ToolTip": "C:\\Users\\Paiva\\Downloads\\antitux-3\\Projectile.cs",
+              "RelativeToolTip": "Projectile.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAYwBwAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T19:03:08.166Z"
             }
           ]
         }
